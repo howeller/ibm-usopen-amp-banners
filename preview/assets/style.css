@@ -176,7 +176,6 @@ h4 {
 .status-approved {
     color: green;
 }
-*/
 
 .downloads {
     display: block;
@@ -202,7 +201,9 @@ h4 {
 #ahref-download {
     position: absolute;
 }
-
+.logo{
+    width: 150px;
+}
 #client-logo
 {
     width: 70px;

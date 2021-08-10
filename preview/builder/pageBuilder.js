@@ -100,7 +100,8 @@ function setAssetName(assetName) {
 }
 
 function createBannerStatic(data) {
-	var fileNameSuffix = (QueryString.type == "jpg") ? ".jpg" : "-backup.jpg";
+	var backupType = (QueryString.backup && QueryString.backupType) ? QueryString.backupType : "jpg",
+		fileNameSuffix = (QueryString.type == "jpg") ? ".jpg" : "." + backupType;
 	var i = document.createElement("img");
 	i.setAttribute("src", pathToRoot + data.src + fileNameSuffix);
 	i.setAttribute("width", data.w + "px");
@@ -341,11 +342,13 @@ function autoZip(filePath, fileFormat) {
 function addBackUpLink() {
 	// OVERRIDE DEFAULT jpg FILE FORMAT IF NOT true or false - zip, gif, etc
 
-	if (QueryString.backup != "false" && QueryString.backup != "undefined") {
-		var suffix = "-backup";
-		var fileFormat = (QueryString.backup != "true") ? QueryString.backup : "jpg";
+	if (QueryString.backup != "false") {
+		// var suffix = "-backup";
+		// var fileFormat = (QueryString.backup != "true") ? QueryString.backup : "jpg";
+		var fileFormat = QueryString.backupType || "jpg";
 
-		addDownloadLink(QueryString.src + suffix, fileFormat);
+		addDownloadLink(QueryString.src, fileFormat);
+		// addDownloadLink( QueryString.src + suffix , fileFormat );
 	}
 }
 
