@@ -226,8 +226,8 @@ if (reversed == null) { reversed = false; }
 	// Layer_2 (mask)
 	var mask = new cjs.Shape();
 	mask._off = true;
-	mask.graphics.p("Egu3ADZIAAkNMBdvAAAIAAENg");
-	mask.setTransform(300,21.7);
+	mask.graphics.p("Egu3AETIAAolMBdvAAAIAAIlg");
+	mask.setTransform(300,24.8842);
 
 	// Layer_1
 	this.instance = new lib.t1();
@@ -244,7 +244,7 @@ if (reversed == null) { reversed = false; }
 	this._renderFirstFrame();
 
 }).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(0,16.4,600,27);
+p.nominalBounds = new cjs.Rectangle(0,0,600,52.4);
 
 
 (lib.replay = function(mode,startPosition,loop,reversed) {
@@ -900,9 +900,9 @@ if (reversed == null) { reversed = false; }
 	// textMask (mask)
 	var mask = new cjs.Shape();
 	mask._off = true;
-	var mask_graphics_2 = new cjs.Graphics().p("Egu3ADZIAAkNMBdvAAAIAAENg");
+	var mask_graphics_2 = new cjs.Graphics().p("Egu3AEBIAAlxMBdvAAAIAAFxg");
 
-	this.timeline.addTween(cjs.Tween.get(mask).to({graphics:null,x:0,y:0}).wait(2).to({graphics:mask_graphics_2,x:300,y:21.7}).wait(218));
+	this.timeline.addTween(cjs.Tween.get(mask).to({graphics:null,x:0,y:0}).wait(2).to({graphics:mask_graphics_2,x:300,y:25.6665}).wait(218));
 
 	// t1_png
 	this.instance_1 = new lib.t1_1("single",0);
