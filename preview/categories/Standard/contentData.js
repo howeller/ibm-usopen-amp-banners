@@ -93,7 +93,6 @@ var objData = {
 						backup: false,
 						manualzip: true
 					},
-					,
 					{
 						overwriteSizeDisplay: "",
 						label: "IBM_USO_PowerRankings_970x90",
@@ -196,7 +195,6 @@ var objData = {
 						backup: false,
 						manualzip: true
 					},
-					,
 					{
 						overwriteSizeDisplay: "",
 						label: "IBM_USO_CloudAI_970x90",
@@ -299,7 +297,6 @@ var objData = {
 						backup: false,
 						manualzip: true
 					},
-					,
 					{
 						overwriteSizeDisplay: "",
 						label: "IBM_USO_DigExperience_970x90",
@@ -313,8 +310,37 @@ var objData = {
 						manualzip: true
 					}
 				]
+			},
+			{
+				folderName: "phone",
+				title: "IBM_USO_Phone",
+				bannerList: [
+					{
+						overwriteSizeDisplay: "",
+						label: "IBM_USO_Phone_300x250",
+						src: "IBM_USO_Phone_300x250",
+						w: 300,
+						h: 250,
+						type: "html5",
+						approved: false,
+						dload: true,
+						backup: false,
+						manualzip: true
+					}/*,
+					{
+						overwriteSizeDisplay: "",
+						label: "IBM_USO_Phone_384x384",
+						src: "IBM_USO_Phone_384x384",
+						w: 384,
+						h: 384,
+						type: "html5",
+						approved: false,
+						dload: true,
+						backup: false,
+						manualzip: true
+					}*/
+				]
 			}
-
 		]
 	}]
 }

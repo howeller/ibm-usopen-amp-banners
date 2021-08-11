@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="authoring-tool" content="$VERSION">
+<meta name="ad.size" content="width=$WT,height=$HT">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+<title>$TITLE</title>
+$CENTER_STYLE
+<script src="https://s0.2mdn.net/ads/studio/cached_libs/createjs_2019.11.15_min.js" type="text/javascript"></script>
+<script title="CjsFun" type="text/javascript">
+/*
+	Minified CjsFun Module. 
+	version 2.1.1. 
+	Source at https://github.com/howeller/CjsFun
+*/
+function CjsFun(e,t){function a(e){var t=t||createjs,a=new t.Shape,n=new t.Shape;n.graphics.beginFill("#000").drawRect(0,0,canvas.width,canvas.height),a.hitArea=n,a.setBounds(0,0,canvas.width,canvas.height),a.x=a.y=a.regX=a.regY=0,a.name="bgClick",a.cursor="pointer",a.addEventListener("click",e),i.bgClick=a,stage.addChild(a),stage.setChildIndex(a,0)}function n(e){var t=e.regX,a=e.regY;e.regX=e.regY=0,e.x-=t,e.y-=a}var s="2.1.1",i=null,r=e,l=0,o=[];return CjsFun=function(){return i},CjsFun.prototype=this,i=new CjsFun,i.constructor=CjsFun,console.log("Making CjsFun : version "+s),t&&"function"==typeof t&&a(t),i.bgClick=null,i.globalSpeed=.3,i.globalEase=createjs.Ease.quadOut,i.pauser=function(e){var t=e||0;r.stop(),l=l||0,l+=e,createjs.Tween.get(r,{override:!0}).wait(1e3*t).call(function(){r.play()})},i.getTotalRuntTime=function(){var e=createjs.Ticker.getFPS(),t=r.totalFrames/e+l;return t},i.initMc=function(e,t){if(!e.init){t=t||{},e.init=!0,t.useStageReg||n(e);var a=e.nominalBounds;e.width=a.width,e.height=a.height,e.stageX=Math.round(e.x),e.stageY=Math.round(e.y),e.stageScaleX=e.scaleX,e.stageScaleY=e.scaleY}void 0!==e.reset&&e.reset!==!0||(e.reset=!1,o.push(e))},i.fadeIn=function(e,t,a){this.initMc(e),a=a||{};var n=t||0,s=a.sp||this.globalSpeed,i=a.ease||this.globalEase;e.alpha=0,createjs.Tween.get(e,{override:!0}).wait(1e3*n).to({alpha:1},1e3*s,i)},i.fadeOut=function(e,t,a){this.initMc(e),a=a||{};var n=t||0,s=a.sp||this.globalSpeed,i=a.ease||this.globalEase;createjs.Tween.get(e,{override:!0}).wait(1e3*n).to({alpha:0},1e3*s,i)},i.resetAllMc=function(){console.log("resetAllMc ");for(var e in o){var t=o[e];t.reset||(t.alpha=1,t.x=t.stageX,t.y=t.stageY,t.scaleX=t.stageScaleX,t.scaleY=t.stageScaleY,t.nominalBounds.width=t.width,t.nominalBounds.height=t.height,t.reset=!0)}o=[],l=0},i.replay=function(){i.resetAllMc(),r.gotoAndPlay(0)},i}
+</script>
+$ANIMATE_CC_SCRIPTS
+$SCRIPT_START
+var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
+function init() {
+	canvas = document.getElementById("$CANVAS_ID");
+	anim_container = document.getElementById("$ANIM_CONTAINER_ID");
+	dom_overlay_container = document.getElementById("dom_overlay_container");
+	$CREATE_LOADER
+	$LOAD_MANIFEST
+	$PRELOAD_ASSETS
+}
+$HANDLE_FILE_LOAD_START	
+	$HANDLE_FILE_LOAD_BODY	
+$HANDLE_FILE_LOAD_END
+$HANDLE_COMPLETE_START
+	//This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
+	$CREATE_STAGE	
+	//Registers the "tick" event listener.
+	$START_ANIMATION	    
+	//Code to support hidpi screens and responsive scaling.
+	$RESP_HIDPI	
+$HANDLE_COMPLETE_END
+$PLAYSOUND
+var clickTag = "http://www.google.com";
+function clickHandler() {
+	window.open(clickTag);
+}
+$SCRIPT_END
+</head>
+<body onload="init();" style="margin:0px;">
+	<div id="$ANIM_CONTAINER_ID" style="background-color:$BG; width:$WTpx; height:$HTpx">
+		<canvas id="$CANVAS_ID" width="$WT" height="$HT" style="position: absolute; display: $CANVAS_DISP; background-color:$BG;"></canvas>
+		<div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:$WTpx; height:$HTpx; position: absolute; left: 0px; top: 0px; display: $CANVAS_DISP;">
+		</div>
+	</div>
+    $PRELOADER_DIV
+</body>
+</html>
