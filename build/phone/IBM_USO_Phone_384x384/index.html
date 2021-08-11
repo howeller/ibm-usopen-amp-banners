@@ -623,11 +623,11 @@ if (reversed == null) { reversed = false; }
 	// vector_arrow
 	this.shape = new cjs.Shape();
 	this.shape.graphics.f("#FFFFFF").s().p("ABWCJIB8h2IgBgDIhOADImXAAIAAglIGXAAIBOADIABgCIh8h4IAagaIClCjIilCkg");
-	this.shape.setTransform(120.0252,13.8501,0.3659,0.3659);
+	this.shape.setTransform(131.5252,13.8501,0.3659,0.3659);
 	this.timeline.addTween(cjs.Tween.get(this.shape).wait(1));
 	this._renderFirstFrame();
 }).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(-3,-7,144,36);
+p.nominalBounds = new cjs.Rectangle(-3,-7,144.7,36);
 (lib.bg = function(mode,startPosition,loop,reversed) {
 if (loop == null) { loop = true; }
 if (reversed == null) { reversed = false; }
@@ -716,7 +716,7 @@ if (reversed == null) { reversed = false; }
 	this.frame_0 = function() {
 		fun = new CjsFun(this); //Instantiate CjsFun
 		fun.globalSpeed = 0.5; // Set custom speed
-		this.clickTag.addEventListener("click", clickHandler);
+		this.clickBtn.addEventListener("click", clickHandler);
 	}
 	this.frame_10 = function() {
 		fun.pauser(1);
@@ -758,13 +758,13 @@ if (reversed == null) { reversed = false; }
 	this.replay_mc.setTransform(369.85,13.6,1,1,0,0,0,7.2,7.5);
 	this.replay_mc._off = true;
 	this.timeline.addTween(cjs.Tween.get(this.replay_mc).wait(80).to({_off:false},0).wait(3));
-	// clickTag
-	this.clickTag = new lib.mc_square();
-	this.clickTag.name = "clickTag";
-	this.clickTag.setTransform(192,192,12,11.9999,0,0,0,16,16);
-	this.clickTag.alpha = 0.0117;
-	new cjs.ButtonHelper(this.clickTag, 0, 1, 1);
-	this.timeline.addTween(cjs.Tween.get(this.clickTag).wait(83));
+	// clickBtn
+	this.clickBtn = new lib.mc_square();
+	this.clickBtn.name = "clickBtn";
+	this.clickBtn.setTransform(192,192,12,11.9999,0,0,0,16,16);
+	this.clickBtn.alpha = 0.0117;
+	new cjs.ButtonHelper(this.clickBtn, 0, 1, 1);
+	this.timeline.addTween(cjs.Tween.get(this.clickBtn).wait(83));
 	// logo
 	this.instance = new lib.IBMLogo();
 	this.instance.setTransform(314.2,345.15,0.2921,0.2901,0,0,0,213.3,80.2);

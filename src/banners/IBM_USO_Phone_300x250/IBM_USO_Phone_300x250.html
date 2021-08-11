@@ -11,7 +11,7 @@
 <script title="CjsFun" type="text/javascript">
 /*
 	Minified CjsFun Module. 
-	version 2.1.1. 
+	version 2.1.1.
 	Source at https://github.com/howeller/CjsFun
 */
 function CjsFun(e,t){function a(e){var t=t||createjs,a=new t.Shape,n=new t.Shape;n.graphics.beginFill("#000").drawRect(0,0,canvas.width,canvas.height),a.hitArea=n,a.setBounds(0,0,canvas.width,canvas.height),a.x=a.y=a.regX=a.regY=0,a.name="bgClick",a.cursor="pointer",a.addEventListener("click",e),i.bgClick=a,stage.addChild(a),stage.setChildIndex(a,0)}function n(e){var t=e.regX,a=e.regY;e.regX=e.regY=0,e.x-=t,e.y-=a}var s="2.1.1",i=null,r=e,l=0,o=[];return CjsFun=function(){return i},CjsFun.prototype=this,i=new CjsFun,i.constructor=CjsFun,console.log("Making CjsFun : version "+s),t&&"function"==typeof t&&a(t),i.bgClick=null,i.globalSpeed=.3,i.globalEase=createjs.Ease.quadOut,i.pauser=function(e){var t=e||0;r.stop(),l=l||0,l+=e,createjs.Tween.get(r,{override:!0}).wait(1e3*t).call(function(){r.play()})},i.getTotalRuntTime=function(){var e=createjs.Ticker.getFPS(),t=r.totalFrames/e+l;return t},i.initMc=function(e,t){if(!e.init){t=t||{},e.init=!0,t.useStageReg||n(e);var a=e.nominalBounds;e.width=a.width,e.height=a.height,e.stageX=Math.round(e.x),e.stageY=Math.round(e.y),e.stageScaleX=e.scaleX,e.stageScaleY=e.scaleY}void 0!==e.reset&&e.reset!==!0||(e.reset=!1,o.push(e))},i.fadeIn=function(e,t,a){this.initMc(e),a=a||{};var n=t||0,s=a.sp||this.globalSpeed,i=a.ease||this.globalEase;e.alpha=0,createjs.Tween.get(e,{override:!0}).wait(1e3*n).to({alpha:1},1e3*s,i)},i.fadeOut=function(e,t,a){this.initMc(e),a=a||{};var n=t||0,s=a.sp||this.globalSpeed,i=a.ease||this.globalEase;createjs.Tween.get(e,{override:!0}).wait(1e3*n).to({alpha:0},1e3*s,i)},i.resetAllMc=function(){console.log("resetAllMc ");for(var e in o){var t=o[e];t.reset||(t.alpha=1,t.x=t.stageX,t.y=t.stageY,t.scaleX=t.stageScaleX,t.scaleY=t.stageScaleY,t.nominalBounds.width=t.width,t.nominalBounds.height=t.height,t.reset=!0)}o=[],l=0},i.replay=function(){i.resetAllMc(),r.gotoAndPlay(0)},i}
@@ -41,10 +41,6 @@ lib.ssMetadata = [];
 	this.initialize(img.bg_2x);
 }).prototype = p = new cjs.Bitmap();
 p.nominalBounds = new cjs.Rectangle(0,0,600,500);
-(lib.ctaText = function() {
-	this.initialize(img.ctaText);
-}).prototype = p = new cjs.Bitmap();
-p.nominalBounds = new cjs.Rectangle(0,0,235,36);
 (lib.phone_2x = function() {
 	this.initialize(img.phone_2x);
 }).prototype = p = new cjs.Bitmap();
@@ -572,7 +568,7 @@ if (reversed == null) { reversed = false; }
 	this._renderFirstFrame();
 }).prototype = p = new cjs.MovieClip();
 p.nominalBounds = new cjs.Rectangle(0,0,27,27);
-(lib.ctaText_1 = function(mode,startPosition,loop,reversed) {
+(lib.ctaText = function(mode,startPosition,loop,reversed) {
 if (loop == null) { loop = true; }
 if (reversed == null) { reversed = false; }
 	var props = new Object();
@@ -624,22 +620,14 @@ if (reversed == null) { reversed = false; }
 	props.loop = loop;
 	props.reversed = reversed;
 	cjs.MovieClip.apply(this,[props]);
-	// Layer_2 (mask)
-	var mask = new cjs.Shape();
-	mask._off = true;
-	mask.graphics.p("Aj5C0IAAlnIHzAAIAAFng");
-	mask.setTransform(116,11);
-	// Layer_1
-	this.instance = new lib.ctaText();
-	this.instance.setTransform(-3,3,0.5,0.5);
-	var maskedShapeInstanceList = [this.instance];
-	for(var shapedInstanceItr = 0; shapedInstanceItr < maskedShapeInstanceList.length; shapedInstanceItr++) {
-		maskedShapeInstanceList[shapedInstanceItr].mask = mask;
-	}
-	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1));
+	// Layer_3
+	this.shape = new cjs.Shape();
+	this.shape.graphics.f("#FFFFFF").s().p("ABWCJIB8h2IgBgDIhOADImXAAIAAglIGXAAIBOADIABgCIh8h4IAagaIClCjIilCkg");
+	this.shape.setTransform(110.1248,12.1499,0.3658,0.3658);
+	this.timeline.addTween(cjs.Tween.get(this.shape).wait(1));
 	this._renderFirstFrame();
 }).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(91,3,23.5,18);
+p.nominalBounds = new cjs.Rectangle(-3,-7,144,36);
 (lib.bg = function(mode,startPosition,loop,reversed) {
 if (loop == null) { loop = true; }
 if (reversed == null) { reversed = false; }
@@ -696,31 +684,14 @@ if (reversed == null) { reversed = false; }
 	}
 	// actions tween:
 	this.timeline.addTween(cjs.Tween.get(this).wait(48).call(this.frame_48).wait(1));
-	// Layer_4
+	// arrow
 	this.instance = new lib.ctaArrow("synched",0);
 	this.instance.setTransform(117.2,18.8,1,1,0,0,0,58.8,9);
 	this.timeline.addTween(cjs.Tween.get(this.instance).wait(13).to({startPosition:0},0).to({x:129.2},9,cjs.Ease.cubicInOut).to({x:117.2},7,cjs.Ease.quadOut).to({x:129.2},9,cjs.Ease.cubicInOut).to({x:117.2},7,cjs.Ease.quadOut).wait(4));
-	// Layer_3 (mask)
-	var mask = new cjs.Shape();
-	mask._off = true;
-	mask.graphics.p("AoRC0IAAlnIQjAAIAAFng");
-	mask.setTransform(54.025,19);
-	// ctaTxt_2
-	this.instance_1 = new lib.ctaText_1("synched",0);
-	this.instance_1.setTransform(75.8,18.8,1,1,0,0,0,58.8,9);
-	var maskedShapeInstanceList = [this.instance_1];
-	for(var shapedInstanceItr = 0; shapedInstanceItr < maskedShapeInstanceList.length; shapedInstanceItr++) {
-		maskedShapeInstanceList[shapedInstanceItr].mask = mask;
-	}
-	this.timeline.addTween(cjs.Tween.get(this.instance_1).wait(49));
 	// ctaTxt
-	this.instance_2 = new lib.ctaText_1("synched",0);
-	this.instance_2.setTransform(75.8,18.8,1,1,0,0,0,58.8,9);
-	var maskedShapeInstanceList = [this.instance_2];
-	for(var shapedInstanceItr = 0; shapedInstanceItr < maskedShapeInstanceList.length; shapedInstanceItr++) {
-		maskedShapeInstanceList[shapedInstanceItr].mask = mask;
-	}
-	this.timeline.addTween(cjs.Tween.get(this.instance_2).wait(49));
+	this.instance_1 = new lib.ctaText("synched",0);
+	this.instance_1.setTransform(75.8,18.8,1,1,0,0,0,58.8,9);
+	this.timeline.addTween(cjs.Tween.get(this.instance_1).wait(49));
 	// back
 	this.shape = new cjs.Shape();
 	this.shape.graphics.f("#0064FF").s().p("AubDVIAAmpIc3AAIAAGpg");
@@ -745,7 +716,7 @@ if (reversed == null) { reversed = false; }
 	this.frame_0 = function() {
 		fun = new CjsFun(this); //Instantiate CjsFun
 		fun.globalSpeed = 0.5; // Set custom speed
-		this.clickTag.addEventListener("click", clickHandler);
+		this.clickBtn.addEventListener("click", clickHandler);
 	}
 	this.frame_10 = function() {
 		fun.pauser(1);
@@ -787,31 +758,26 @@ if (reversed == null) { reversed = false; }
 	this.replay_mc.setTransform(285.55,11.5,1,1,0,0,0,7.2,7.5);
 	this.replay_mc._off = true;
 	this.timeline.addTween(cjs.Tween.get(this.replay_mc).wait(80).to({_off:false},0).wait(3));
-	// border
-	this.shape = new cjs.Shape();
-	this.shape.graphics.f("#000000").s().p("A3bTiMAAAgnDMAu3AAAMAAAAnDgA3RTYMAujAAAMAAAgmvMgujAAAg");
-	this.shape.setTransform(150,125);
-	this.timeline.addTween(cjs.Tween.get(this.shape).wait(83));
-	// clickTag
-	this.clickTag = new lib.mc_square();
-	this.clickTag.name = "clickTag";
-	this.clickTag.setTransform(150,125,9.3751,7.8125,0,0,0,16,16);
-	this.clickTag.alpha = 0.0117;
-	new cjs.ButtonHelper(this.clickTag, 0, 1, 1);
-	this.timeline.addTween(cjs.Tween.get(this.clickTag).wait(83));
+	// clickBtn
+	this.clickBtn = new lib.mc_square();
+	this.clickBtn.name = "clickBtn";
+	this.clickBtn.setTransform(150,125,9.3751,7.8125,0,0,0,16,16);
+	this.clickBtn.alpha = 0.0117;
+	new cjs.ButtonHelper(this.clickBtn, 0, 1, 1);
+	this.timeline.addTween(cjs.Tween.get(this.clickBtn).wait(83));
 	// logo
 	this.instance = new lib.IBMLogo();
 	this.instance.setTransform(247.45,218.05,0.2001,0.2001,0,0,0,212.2,78.8);
+	this.shape = new cjs.Shape();
+	this.shape.graphics.f("#FED700").s().p("ACkE+QjKgykfgpQD6gREGAKQEYALCOAlQhlBUiTAAQg3AAiOgigAgOB3Qk2gmmbgYQFLiKFlg6QFsg8F3AbQAsBPAABcQAABBgYA9QgWA6gqAwQlLhHlLgpgAhHkhQEAg+C6AAQBoAABOArQA7AfAxA7QkTgSkzAQQlIARkLA0QDohWDVg0g");
+	this.shape.setTransform(138.8877,208.6825,0.27,0.27);
 	this.shape_1 = new cjs.Shape();
-	this.shape_1.graphics.f("#FED700").s().p("ACkE+QjKgykfgpQD6gREGAKQEYALCOAlQhlBUiTAAQg3AAiOgigAgOB3Qk2gmmbgYQFLiKFlg6QFsg8F3AbQAsBPAABcQAABBgYA9QgWA6gqAwQlLhHlLgpgAhHkhQEAg+C6AAQBoAABOArQA7AfAxA7QkTgSkzAQQlIARkLA0QDohWDVg0g");
-	this.shape_1.setTransform(138.8877,208.6825,0.27,0.27);
+	this.shape_1.graphics.f("#FFFFFF").s().p("Ah2EqIBrlbQAYhWALguIBbAAIgNA1IABAAQAYgdAfgQQAfgQAfAAQA1AAAZAnQAXAjgHA4QgLBbg+BCQhBBFhXAAQgoAAgWgOIgBAAIgsCRgAB1hRQgeAhgPAxIgVBJQAPAQAdAAQAnAAAlgxQAkgtAGg1QACgXgHgPQgKgSgXAAQgdAAgdAggAFeCAQghgmAIhDQAKhSA8g+QBChEBYAAQA1AAAdAbQAfAcgGAvQgOB4jdgFQgCAUAIAPQASAcAtAAQAaAAAggJQAbgHAYgLIgZBRQg3AWg/AAQhIAAgigngAHWhcQgVAUgKAbQA9ABAcgKQAfgJADgXQABgNgJgIQgJgIgRAAQggAAgaAXgAmNByQghg1AWhJQAXhJBCg0QBDg0BJAAQBJAAAkA0QAkA0gXBKQgXBKhBAzQhDA1hPAAQhJAAghg1gAkThAQgbAqgFAuQgEAeANASQAMATAaAAQAmAAAfgwQAbgqAGgxQADgbgJgRQgMgVgcAAQgoAAgfAxgAs1CRIAZhRQAUAKAaAIQAfAJAYAAQAXAAAOgIQANgHABgNQACgNgJgKQgKgKgYgLQhLgkAHg2QAHg1AyggQAyghBJAAQA1AAAkAOIgYBNQgmgRgpAAQgWAAgOAIQgPAIgCAOQgDATAsAUQAkARARATQAXAYgEAgQgIA6g1AgQgyAfhNAAQg+AAgsgWgAxuCOQgUgYAFgsQADgZAKghIA9jFIBkAAIg7C+QgMAoAEATQAEAWAaAAQAcAAAZgcQAbgfARg3IAxidIBkAAIhGDlQgSA8gMAzIhbAAIANg1IgBAAQgzA9hMAAQgqAAgUgZgANFCfIA7i+QAMgogEgTQgEgXgaAAQgcAAgZAdQgbAfgRA3IgxCdIhkAAIBGjlQARg5ANg2IBbAAIgNA1IABAAQAzg9BMAAQAqAAAUAZQAUAYgFAsQgCAXgLAjIg9DFgAQijMQgPgPAAgYQgBgXAQgQQAPgPAXAAQAXAAAQAPQAPAPABAYQAAAYgQAPQgPAPgXAAQgXAAgQgPgARIkiQgUAAgNANQgNAOAAAUQAAAVAOANQANANAUAAQAUAAANgNQANgNAAgVQAAgVgNgNQgNgNgTAAIgCAAgAQ1jWIAAg8IAYAAQATAAAAARQABAOgOADIANAaIgJAAIgNgZIgNAAIAAAZgAQ9j2IAPAAQANgBAAgKQAAgKgMAAIgQAAg");
+	this.shape_1.setTransform(142.1051,230.0206,0.27,0.27);
 	this.shape_2 = new cjs.Shape();
-	this.shape_2.graphics.f("#FFFFFF").s().p("Ah2EqIBrlbQAYhWALguIBbAAIgNA1IABAAQAYgdAfgQQAfgQAfAAQA1AAAZAnQAXAjgHA4QgLBbg+BCQhBBFhXAAQgoAAgWgOIgBAAIgsCRgAB1hRQgeAhgPAxIgVBJQAPAQAdAAQAnAAAlgxQAkgtAGg1QACgXgHgPQgKgSgXAAQgdAAgdAggAFeCAQghgmAIhDQAKhSA8g+QBChEBYAAQA1AAAdAbQAfAcgGAvQgOB4jdgFQgCAUAIAPQASAcAtAAQAaAAAggJQAbgHAYgLIgZBRQg3AWg/AAQhIAAgigngAHWhcQgVAUgKAbQA9ABAcgKQAfgJADgXQABgNgJgIQgJgIgRAAQggAAgaAXgAmNByQghg1AWhJQAXhJBCg0QBDg0BJAAQBJAAAkA0QAkA0gXBKQgXBKhBAzQhDA1hPAAQhJAAghg1gAkThAQgbAqgFAuQgEAeANASQAMATAaAAQAmAAAfgwQAbgqAGgxQADgbgJgRQgMgVgcAAQgoAAgfAxgAs1CRIAZhRQAUAKAaAIQAfAJAYAAQAXAAAOgIQANgHABgNQACgNgJgKQgKgKgYgLQhLgkAHg2QAHg1AyggQAyghBJAAQA1AAAkAOIgYBNQgmgRgpAAQgWAAgOAIQgPAIgCAOQgDATAsAUQAkARARATQAXAYgEAgQgIA6g1AgQgyAfhNAAQg+AAgsgWgAxuCOQgUgYAFgsQADgZAKghIA9jFIBkAAIg7C+QgMAoAEATQAEAWAaAAQAcAAAZgcQAbgfARg3IAxidIBkAAIhGDlQgSA8gMAzIhbAAIANg1IgBAAQgzA9hMAAQgqAAgUgZgANFCfIA7i+QAMgogEgTQgEgXgaAAQgcAAgZAdQgbAfgRA3IgxCdIhkAAIBGjlQARg5ANg2IBbAAIgNA1IABAAQAzg9BMAAQAqAAAUAZQAUAYgFAsQgCAXgLAjIg9DFgAQijMQgPgPAAgYQgBgXAQgQQAPgPAXAAQAXAAAQAPQAPAPABAYQAAAYgQAPQgPAPgXAAQgXAAgQgPgARIkiQgUAAgNANQgNAOAAAUQAAAVAOANQANANAUAAQAUAAANgNQANgNAAgVQAAgVgNgNQgNgNgTAAIgCAAgAQ1jWIAAg8IAYAAQATAAAAARQABAOgOADIANAaIgJAAIgNgZIgNAAIAAAZgAQ9j2IAPAAQANgBAAgKQAAgKgMAAIgQAAg");
-	this.shape_2.setTransform(142.1051,230.0206,0.27,0.27);
-	this.shape_3 = new cjs.Shape();
-	this.shape_3.graphics.f().s("#FFFFFF").ss(1,1,1).p("AAAjCIAAGF");
-	this.shape_3.setTransform(188,218.55);
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_3},{t:this.shape_2},{t:this.shape_1},{t:this.instance}]}).wait(83));
+	this.shape_2.graphics.f().s("#FFFFFF").ss(1,1,1).p("AAAjCIAAGF");
+	this.shape_2.setTransform(188,218.55);
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_2},{t:this.shape_1},{t:this.shape},{t:this.instance}]}).wait(83));
 	// textMask (mask)
 	var mask = new cjs.Shape();
 	mask._off = true;
@@ -975,7 +941,6 @@ lib.properties = {
 	opacity: 1.00,
 	manifest: [
 		{src:"images/bg_2x.jpg", id:"bg_2x"},
-		{src:"images/ctaText.png", id:"ctaText"},
 		{src:"images/phone_2x.png", id:"phone_2x"}
 	],
 	preloads: []
@@ -1118,7 +1083,7 @@ function clickHandler() {
 <body onload="init();" style="margin:0px;">
 	<div id="animation_container" style="background-color:rgba(255, 255, 255, 1.00); width:300px; height:250px">
 		<canvas id="canvas" width="300" height="250" style="position: absolute; display: block; background-color:rgba(255, 255, 255, 1.00);"></canvas>
-		<div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:300px; height:250px; position: absolute; left: 0px; top: 0px; display: block;">
+		<div id="dom_overlay_container"  class="border" style="border:1px solid #000000; box-sizing:border-box; -moz-box-sizing:border-box;-webkit-box-sizing:border-box;pointer-events:none; overflow:hidden; width:300px; height:250px; position: absolute; left: 0px; top: 0px; display: block;"> 
 		</div>
 	</div>
 </body>
