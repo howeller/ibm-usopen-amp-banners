@@ -1183,7 +1183,7 @@ if (reversed == null) { reversed = false; }
 		maskedShapeInstanceList[shapedInstanceItr].mask = mask_9;
 	}
 
-	this.timeline.addTween(cjs.Tween.get(this.instance_19).wait(57).to({regX:74.8,scaleX:1.0797,scaleY:1.0018,skewX:3.4065,x:512.55},0).to({regY:38.3,scaleX:1,scaleY:0.643,skewX:-9.3452,skewY:-4.259,x:508.95,y:326.6},16,cjs.Ease.quadIn).to({_off:true},1).wait(10).to({_off:false,regX:75.5,regY:39.2,scaleX:0.9961,scaleY:0.6222,skewX:10.9831,skewY:-4.2581,x:509.6,y:189.9},0).to({regX:74.8,regY:38.2,scaleX:1.0797,scaleY:1.0018,skewX:3.4065,skewY:0,x:512.55,y:262.2},15,cjs.Ease.quadOut).wait(121));
+	this.timeline.addTween(cjs.Tween.get(this.instance_19).wait(160).to({regX:74.8,scaleX:1.0797,scaleY:1.0018,skewX:3.4065,x:512.55},0).to({regY:38.3,scaleX:1,scaleY:0.643,skewX:-9.3452,skewY:-4.259,x:508.95,y:326.6},16,cjs.Ease.quadIn).to({_off:true},1).wait(10).to({_off:false,regX:75.5,regY:39.2,scaleX:0.9961,scaleY:0.6222,skewX:10.9831,skewY:-4.2581,x:509.6,y:189.9},0).to({regX:74.8,regY:38.2,scaleX:1.0797,scaleY:1.0018,skewX:3.4065,skewY:0,x:512.55,y:262.2},15,cjs.Ease.quadOut).wait(18));
 
 	// Layer_27
 	this.instance_20 = new lib.lines3("synched",0);
@@ -1196,7 +1196,7 @@ if (reversed == null) { reversed = false; }
 		maskedShapeInstanceList[shapedInstanceItr].mask = mask_9;
 	}
 
-	this.timeline.addTween(cjs.Tween.get(this.instance_20).wait(57).to({_off:false},0).wait(11).to({regY:34.6,scaleY:0.8249,y:184.75},0).to({regY:34.5,scaleX:1,scaleY:1.1192,y:261.6},10,cjs.Ease.quadIn).to({regY:34.7,scaleX:0.8503,scaleY:0.7856,y:336.35},10,cjs.Ease.quadOut).wait(132));
+	this.timeline.addTween(cjs.Tween.get(this.instance_20).wait(160).to({_off:false},0).wait(11).to({regY:34.6,scaleY:0.8249,y:184.75},0).to({regY:34.5,scaleX:1,scaleY:1.1192,y:261.6},10,cjs.Ease.quadIn).to({regY:34.7,scaleX:0.8503,scaleY:0.7856,y:336.35},10,cjs.Ease.quadOut).wait(29));
 
 	// tennisBall_png
 	this.instance_21 = new lib.tennisBallLight();
@@ -1211,16 +1211,16 @@ if (reversed == null) { reversed = false; }
 	this.timeline.addTween(cjs.Tween.get(this.instance_21).wait(220));
 
 	// tennisBall_png
-	this.instance_22 = new lib.tennisBall_1("synched",0);
+	this.instance_22 = new lib.tennisBall_1("single",0);
 	this.instance_22.setTransform(506.75,312.35,0.9509,0.9506,0,0,0,163.1,164.1);
 
-	this.timeline.addTween(cjs.Tween.get(this.instance_22).wait(220));
+	this.timeline.addTween(cjs.Tween.get(this.instance_22).wait(160).to({mode:"synched"},0).wait(60));
 
 	// bg
 	this.instance_23 = new lib.bg_1("synched",0);
 	this.instance_23.setTransform(150,646.6,1,1,0,0,0,150,646.6);
 
-	this.timeline.addTween(cjs.Tween.get(this.instance_23).wait(57).to({startPosition:0},0).to({y:345.6},42,cjs.Ease.cubicInOut).wait(121));
+	this.timeline.addTween(cjs.Tween.get(this.instance_23).wait(160).to({startPosition:0},0).to({y:345.6},42,cjs.Ease.cubicInOut).wait(18));
 
 	this._renderFirstFrame();
 
