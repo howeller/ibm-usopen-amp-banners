@@ -795,9 +795,9 @@ if (reversed == null) { reversed = false; }
 	// textMask (mask)
 	var mask_1 = new cjs.Shape();
 	mask_1._off = true;
-	var mask_1_graphics_6 = new cjs.Graphics().p("Egu3AJTIAAomMBdvAAAIAAImg");
+	var mask_1_graphics_23 = new cjs.Graphics().p("Egu3AJTIAAomMBdvAAAIAAImg");
 
-	this.timeline.addTween(cjs.Tween.get(mask_1).to({graphics:null,x:0,y:0}).wait(6).to({graphics:mask_1_graphics_6,x:300,y:59.5}).wait(215));
+	this.timeline.addTween(cjs.Tween.get(mask_1).to({graphics:null,x:0,y:0}).wait(23).to({graphics:mask_1_graphics_23,x:300,y:59.5}).wait(198));
 
 	// t1_png
 	this.instance_2 = new lib.t1_1("single",1);
@@ -810,7 +810,7 @@ if (reversed == null) { reversed = false; }
 		maskedShapeInstanceList[shapedInstanceItr].mask = mask_1;
 	}
 
-	this.timeline.addTween(cjs.Tween.get(this.instance_2).wait(6).to({_off:false},0).to({y:300},11,cjs.Ease.quartOut).wait(40).to({startPosition:1},0).to({y:273,alpha:0},12,cjs.Ease.cubicIn).wait(152));
+	this.timeline.addTween(cjs.Tween.get(this.instance_2).wait(23).to({_off:false},0).to({y:300},11,cjs.Ease.quartOut).wait(23).to({startPosition:1},0).to({y:273,alpha:0},12,cjs.Ease.cubicIn).wait(152));
 
 	// textMask (mask)
 	var mask_2 = new cjs.Shape();
