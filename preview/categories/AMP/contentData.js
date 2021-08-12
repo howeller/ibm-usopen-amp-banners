@@ -18,18 +18,18 @@ var objData = {
 						approved: false,
 						dload: false,
 						backup: false
-					}/*,
+					},
 					{
 						overwriteSizeDisplay: "2",
 						label: "IBM_USO_StoryAd_V2",
 						src: "IBM_USO_StoryAd_V2",
-						w: 600,
-						h: 1200,
+						w: 300,
+						h: 534,
 						type: "html5responsive",
 						approved: false,
 						dload: false,
 						backup: false
-					}*/
+					}
 				]
 			}
 		]
