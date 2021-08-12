@@ -1,0 +1,118 @@
+html, body {
+	height: 100vh;
+	margin: 0;
+	padding: 0;
+	font-family: "IBM Plex Sans", sans-serif;
+	background-color: #153766;
+	/*background: url("images/blue_bg.jpg") no-repeat;
+	background-size: 100% 100%;*/
+}
+
+.container {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: min-content 1fr 1fr;
+	gap: 2rem;
+	color: white;
+	max-width: 600px;
+	margin: auto;
+	height: 100%;
+}
+.container > div {
+	padding: 0 clamp(40px, 4vw, 50vw);
+}
+
+/* Logo Section */
+
+.logo-container .logo {
+	padding-top: 4vw;
+	height: clamp(40px, 7vw, 70px);
+}
+
+/* Text Section */
+
+.text-container {
+	position: relative;
+}
+.text-container .text {
+	margin: 0;
+	position: absolute;
+	top: 0;
+}
+.text-container .text.frame-1 {
+	font-size: clamp(25px, 6vw, 58px);
+	/*font-size: clamp(16px, 4vh, 58px);*/
+}
+.text-container .text.frame-2 {
+	font-size: clamp(25px, 6vw, 38px);
+	/*font-size: clamp(16px, 4vh, 38px);*/
+}
+.text-container .text.frame-3 {
+	font-size: clamp(25px, 6vw, 58px);
+	/*font-size: clamp(16px, 4vh, 58px);*/
+}
+.text-container .text span {
+	display: block;
+	font-size: inherit;
+	overflow: hidden;
+}
+:root{
+	--frame2: 4s;
+	--frame3: 8.5s;
+	--burst: 0.5s;
+	--stagger: 150ms;
+	--stagger1: 1s;
+}
+.text-container .frame-1 span i {
+	display: block;
+	font-style: normal;
+	animation-name: txtIn, txtOut;
+	animation-duration: 0.5s, 0.7s;
+	/*animation-delay: calc(attr(data-delay) * var(--stagger)), calc(attr(data-delay) * var(--stagger) + 2s);*/
+	animation-delay: calc(var(--ani-order) * var(--stagger1)), calc(var(--ani-order) * var(--stagger) + 3s);
+	animation-fill-mode: both;
+	animation-timing-function: ease-out, ease-in;
+}
+.text-container .frame-2 span i {
+	display: block;
+	font-style: normal;
+	animation-name: txtIn, txtOut;
+	animation-duration: 0.5s, 0.7s;
+	animation-delay: calc(var(--ani-order) * var(--stagger) + var(--frame2)), calc(var(--ani-order) * var(--stagger) + var(--frame2) + 3s);
+	animation-fill-mode: both;
+	animation-timing-function: ease-out, ease-in;
+}
+.text-container .frame-3 span i {
+	display: block;
+	font-style: normal;
+	animation-name: txtIn;
+	animation-duration: 0.3s;
+	animation-delay: calc(var(--ani-order) * var(--stagger) + var(--frame3));
+	animation-fill-mode: both;
+	animation-timing-function: ease-out;
+}
+
+@keyframes txtIn {
+	0% {
+		opacity: 0;
+		transform: translateY(50px);
+	}
+	100% {
+		opacity: 1;
+	}
+}
+@keyframes txtOut {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+		transform: translateY(-50px);
+	}
+}
+
+/* Hero Burst Section */
+.hero-container {
+	display: grid;
+	position: relative;
+}

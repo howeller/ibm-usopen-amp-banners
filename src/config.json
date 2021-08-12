@@ -1,0 +1,13 @@
+{
+	"Amp":{
+		"global":{},
+		"IBM_USO_StoryAd_V1": {
+			"bg":{
+				"src": "images/blue_bg.jpg",
+				"alt": ""
+			}
+
+		},
+		"IBM_USO_StoryAd_V2": {}
+	}
+}	
