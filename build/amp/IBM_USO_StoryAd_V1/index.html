@@ -3,44 +3,39 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-
 	<script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>
 	<style amp4ads-boilerplate>body{visibility:hidden}</style>
-	<script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
-	<script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
-	<script async custom-element="amp-story" src="https://cdn.ampproject.org/v0/amp-story-1.0.js"></script>
-	<!-- The AMP Story runtime is responsible for rendering the call to action button. 
-	The call to action button must be configured from a predefined set of [choices](https://www.ampproject.org/docs/ads/story_ads_best_practices). -->  
-	<!-- <meta name="amp-cta-type" content="Learn More"> -->
-	<!-- amp-cta-url specifies where the user is directed once clicking upon the call to action button. -->
-	<!-- <meta name="amp-cta-url" content="https://www.ibm.com"> -->
-
 	<style amp-custom>
 	@font-face {
-		font-family: 'IBM Plex Sans';
+		font-family: 'IBMPlexSans';
 		font-style: normal;
-		font-weight: 400;
-		src:  url(https://s0.2mdn.net/creatives/assets/4260222/IBMPlexSans-Regular-B10.woff) format('woff');
+		font-weight: normal;
+		src: url(https://s0.2mdn.net/creatives/assets/4260222/IBMPlexSans-Regular-B10.woff) format('woff');
 	}
-	html, body {
-		height: 100vh;
+	body {
+		overflow: hidden;
+		position: relative;
+	}
+	* {
 		margin: 0;
 		padding: 0;
-		font-family: "IBM Plex Sans", sans-serif;
-		background-color: #153766;
-		/*background: url("images/blue_bg.jpg") no-repeat;
-		background-size: 100% 100%;*/
+		box-sizing: border-box;
+	}
+	
+	.bg img {
+		object-fit: cover;
 	}
 	
 	.container {
 		display: grid;
+		font-family: "IBMPlexSans";
 		grid-template-columns: 1fr;
-		grid-template-rows: min-content 1fr 1fr;
+		grid-template-rows: min-content auto 62px min-content;
 		gap: 2rem;
 		color: white;
 		max-width: 600px;
 		margin: auto;
-		height: 100%;
+		height: 100vh;
 	}
 	.container > div {
 		padding: 0 clamp(40px, 4vw, 50vw);
@@ -48,38 +43,47 @@
 	
 	/* Logo Section */
 	
-	.logo-container .logo {
-		padding-top: 4vw;
-		height: clamp(40px, 7vw, 70px);
+	.logo-container{
+		margin-top: 4vw;
+		overflow: visible;
+	}
+	.logo-container img {
+		/*object-fit: cover;*/
+		max-height: 72px; 
+		/*padding: 1px;*/
+		width: clamp(240px, 3vw, 270px);
+		height: auto;
 	}
 	
 	/* Text Section */
-	
 	.text-container {
-		position: relative;
+	  position: relative;
 	}
 	.text-container .text {
-		margin: 0;
-		position: absolute;
-		top: 0;
+	  margin: 0;
+	  position: absolute;
+	  top: 0;
 	}
 	.text-container .text.frame-1 {
-		font-size: clamp(25px, 6vw, 58px);
-		/*font-size: clamp(16px, 4vh, 58px);*/
+	  font-size: clamp(25px, 6vw, 58px);
+	  /*font-size: clamp(16px, 4vh, 58px);*/
 	}
 	.text-container .text.frame-2 {
-		font-size: clamp(25px, 6vw, 38px);
-		/*font-size: clamp(16px, 4vh, 38px);*/
+	  font-size: clamp(25px, 6vw, 38px);
+	  /*font-size: clamp(16px, 4vh, 38px);*/
 	}
 	.text-container .text.frame-3 {
-		font-size: clamp(25px, 6vw, 58px);
-		/*font-size: clamp(16px, 4vh, 58px);*/
+	  font-size: clamp(25px, 6vw, 58px);
+	  /*font-size: clamp(16px, 4vh, 58px);*/
 	}
 	.text-container .text span {
-		display: block;
-		font-size: inherit;
-		overflow: hidden;
+	  display: block;
+	  font-size: inherit;
+	  overflow: hidden;
 	}
+	
+	/* Text Animations */
+	
 	:root{
 		--frame2: 4s;
 		--frame3: 8.5s;
@@ -135,117 +139,106 @@
 		}
 	}
 	
-	/* Hero Burst Section */
+	/* Hero Phone and Ball Section */
 	.hero-container {
-		display: grid;
-		position: relative;
+	  overflow: visible;
+	  display: flex;
+	  justify-content: center;
 	}
-	.hero-container .phone {
-	align-self: end;
-	display: block;
-	margin: 0;
-	padding: 0;
-	padding-bottom: 100%;
-	background-size: 80%;
-	background-repeat: no-repeat;
-	background-position: top;
-	position: relative;
-	/*z-index: 5;*/
-}
-/*.hero-container{
-	max-height: 50vh;
-}
+	/* phone */
 .hero-container .phone {
-	align-self: end;
-	display: block;
+	margin-top: auto;
+}
+.hero-container .phone img {
+	/* max-height: 280px;  clamp this */
+}
+/* BALL */
+.hero-container .ball {
+	/* margin-top: auto; */
+}
+.hero-container .ball img {
+	max-height: 100px; /* clamp this */
+	max-width: 100px;
+}
+
+/* Burst Section */
+.burst-container {
 	position: relative;
-	z-index: 5;
-	width: 80vw;
-	max-height: 50vh;
-}*/
-.hero-container .burst {
+}
+/* Burst */
+.burst {
 	position: absolute;
 	display: block;
-	width: 10px;
-	height: 10px;
-	bottom: 85%;
-	left: calc(50% + 150px);/* width of li - left of origin */
-	/*z-index: 4;*/
+	/* width: 10px;
+	height: 10px; */
+	left: calc(50% - .5em);
+	font-size: 13px; /* main controller*/
 }
-.hero-container .burst ul {
+.burst ul {
 	list-style: none;
 	margin: 0;
 	padding: 0;
-	transform-origin: -200px 8px; /* 8px is half of height */
-	transform: rotate(180deg);
+	width: 16px;
+	height: 50px; /* 3.125em*/
 }
-.hero-container .burst li {
+.burst li {
 	display: block;
 	position: absolute;
 	top: 0;
 	right: 0;
-	height: 16px;
-	width: 50px;
+	width: 16px;
+	height: 50px; 
 	background-color: white;
 	border-radius: 8px;
-	transform-origin: -200px 8px;
-
+	transform-origin:8px 12.500em ;
 	animation-name: burstIn;
-	animation-duration: .5s;
+	animation-duration: 0.5s;
 	animation-delay: calc(var(--ani-order) * 150ms + var(--burst));
 	animation-fill-mode: both;
 	animation-timing-function: ease-out;
 }
-.hero-container .burst li:nth-child(1) {
+.burst li:nth-child(1) {
+	transform: rotate(-60deg);
+}
+.burst li:nth-child(2) {
+	transform: rotate(-30deg);
+}
+ /* 
+.burst li:nth-child(3) {
+ transform: rotate(90deg);
+}
+*/
+.burst li:nth-child(4) {
 	transform: rotate(30deg);
 }
-.hero-container .burst li:nth-child(2) {
+.burst li:nth-child(5) {
 	transform: rotate(60deg);
-}
-.hero-container .burst li:nth-child(3) {
-	transform: rotate(90deg);
-}
-.hero-container .burst li:nth-child(4) {
-	transform: rotate(120deg);
-}
-.hero-container .burst li:nth-child(5) {
-	transform: rotate(150deg);
 }
 
 /* Burst Ani */
-
 @keyframes burstIn {
 	0% {
 		/*opacity: 0;*/
-		/*transform: scaleX(0);*/
+		transform: scaleX(0);
 		/*transform-origin: -191px 0px;*/
 		width: 0;
 	}
 	100% {
 		/*opacity: 1;*/
 		/*transform: scaleX(1);*/
-		/*width: 70px;*/
+		/* 		width: 70px; */
 		/*transform-origin: -200px 8px;*/
 	}
 }
+
 	</style>
 </head>
-<!-- In order to see this ads as a standalone AMP page please add the amp-story-visible attribute to the body tag here. 
-	Please remember to remove this attribute before uploading your ad to an ad-server. -->
 <body amp-story-visible>
-		<amp-img alt=""
-		class="hero"
-		src="images/blue_bg.jpg"
-		width="600"
-		height="1200"
-		layout="fill">
-	</amp-img>
+	<amp-img alt=""class="hero"src="images/blue_bg.jpg"width="600"height="1200"layout="fill"></amp-img>
 	<div class="container">
 		<div class="logo-container">
-			<!-- <amp-img alt="logo"class="logo"src="images/ibm-uso-logo.png"width="315"height="72"layout="intrinsic"></amp-img> -->
-			<img class="logo" src="https://s0.2mdn.net/creatives/assets/4260222/ibm-uso-logo.png" layout="intrinsic" />
+			<amp-img alt="logo"class="logo"src="https://s0.2mdn.net/creatives/assets/4260222/ibm-uso-logo.png" width="315" height="72" layout="intrinsic"></amp-img>
 		</div>
-	
 		<div class="text-container">
 			<p class="text frame-1">
 				<span><i data-delay="1" style="--ani-order:1;">You see tennis.</i></span>
@@ -264,9 +257,19 @@
 				<span><i data-delay="3" style="--ani-order:3;">court to couch.</i></span>
 			</p>
 		</div>
-		
-		<div class="hero-container">
+		<div class="burst-container">
 			<div class="burst">
+				<ul>
+					<li style="--ani-order:1.5"></li>
+					<li style="--ani-order:1.2"></li>
+					<li style="--ani-order:1.1"></li>
+					<li style="--ani-order:1.2"></li>
+					<li style="--ani-order:1.5"></li>
+				</ul>
+			</div>
+		</div>
+  	<!-- <div class="burst-container">
+  		<div class="burst">
 				<ul>
 					<li style="--ani-order:1.5;"></li>
 					<li style="--ani-order:1.2;"></li>
@@ -275,8 +278,9 @@
 					<li style="--ani-order:1.5;"></li>
 				</ul>
 			</div>
-			<!--<amp-img alt="phone" class="phone" src="images/phone.png" width="449" height="600" layout="responsive"></amp-img> -->
-			 <figure class="phone" style="background-image:url('https://s0.2mdn.net/creatives/assets/4260222/phone.png');"></figure>
+		</div> -->
+		<div class="hero-container">
+			<amp-img class="phone" src="https://s0.2mdn.net/creatives/assets/4260222/phone.png" width="449" height="600" layout="intrinsic"></amp-img>
 		</div>
 	</div>
 </body>
