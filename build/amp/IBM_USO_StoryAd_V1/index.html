@@ -50,8 +50,7 @@
 	.logo-container img {
 		/*object-fit: cover;*/
 		max-height: 72px; 
-		/*padding: 1px;*/
-		width: clamp(240px, 3vw, 270px);
+		width: clamp(270px, 4vw, 180px);
 		height: auto;
 	}
 	
@@ -87,7 +86,7 @@
 	:root{
 		--frame2: 4s;
 		--frame3: 8.5s;
-		--burst: 0.5s;
+		--burst: 10.5s;
 		--stagger: 150ms;
 		--stagger1: 1s;
 	}
@@ -150,7 +149,7 @@
 	margin-top: auto;
 }
 .hero-container .phone img {
-	/* max-height: 280px;  clamp this */
+	max-height: clamp(45vh, 4vw, 280px);;
 }
 /* BALL */
 .hero-container .ball {
@@ -165,7 +164,7 @@
 .burst-container {
 	position: relative;
 }
-/* Burst */
+
 .burst {
 	position: absolute;
 	display: block;
@@ -218,13 +217,13 @@
 /* Burst Ani */
 @keyframes burstIn {
 	0% {
-		/*opacity: 0;*/
-		transform: scaleX(0);
+		opacity: 0;
+		/*transform: scaleX(0);*/
 		/*transform-origin: -191px 0px;*/
-		width: 0;
+		/*width: 0;*/
 	}
 	100% {
-		/*opacity: 1;*/
+		opacity: 1;
 		/*transform: scaleX(1);*/
 		/* 		width: 70px; */
 		/*transform-origin: -200px 8px;*/
@@ -237,7 +236,7 @@
 	<amp-img alt=""class="hero"src="images/blue_bg.jpg"width="600"height="1200"layout="fill"></amp-img>
 	<div class="container">
 		<div class="logo-container">
-			<amp-img alt="logo"class="logo"src="https://s0.2mdn.net/creatives/assets/4260222/ibm-uso-logo.png" width="315" height="72" layout="intrinsic"></amp-img>
+			<amp-img alt="logo"class="logo"src="images/ibm-uso-logo.png" width="315" height="72" layout="intrinsic"></amp-img>
 		</div>
 		<div class="text-container">
 			<p class="text frame-1">
@@ -280,7 +279,7 @@
 			</div>
 		</div> -->
 		<div class="hero-container">
-			<amp-img class="phone" src="https://s0.2mdn.net/creatives/assets/4260222/phone.png" width="449" height="600" layout="intrinsic"></amp-img>
+			<amp-img class="phone" src="images/phone.png" width="449" height="600" layout="intrinsic"></amp-img>
 		</div>
 	</div>
 </body>

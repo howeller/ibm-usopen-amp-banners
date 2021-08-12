@@ -1,88 +1,85 @@
+/* phone */
 .hero-container .phone {
-	align-self: end;
-	display: block;
-	margin: 0;
-	padding: 0;
-	padding-bottom: 100%;
-	background-size: 80%;
-	background-repeat: no-repeat;
-	background-position: top;
-	position: relative;
-	/*z-index: 5;*/
+	margin-top: auto;
 }
-/*.hero-container{
-	max-height: 50vh;
+.hero-container .phone img {
+	max-height: clamp(45vh, 4vw, 280px);;
 }
-.hero-container .phone {
-	align-self: end;
-	display: block;
+/* BALL */
+.hero-container .ball {
+	/* margin-top: auto; */
+}
+.hero-container .ball img {
+	max-height: 100px; /* clamp this */
+	max-width: 100px;
+}
+
+/* Burst Section */
+.burst-container {
 	position: relative;
-	z-index: 5;
-	width: 80vw;
-	max-height: 50vh;
-}*/
-.hero-container .burst {
+}
+
+.burst {
 	position: absolute;
 	display: block;
-	width: 10px;
-	height: 10px;
-	bottom: 85%;
-	left: calc(50% + 150px);/* width of li - left of origin */
-	/*z-index: 4;*/
+	/* width: 10px;
+	height: 10px; */
+	left: calc(50% - .5em);
+	font-size: 13px; /* main controller*/
 }
-.hero-container .burst ul {
+.burst ul {
 	list-style: none;
 	margin: 0;
 	padding: 0;
-	transform-origin: -200px 8px; /* 8px is half of height */
-	transform: rotate(180deg);
+	width: 16px;
+	height: 50px; /* 3.125em*/
 }
-.hero-container .burst li {
+.burst li {
 	display: block;
 	position: absolute;
 	top: 0;
 	right: 0;
-	height: 16px;
-	width: 50px;
+	width: 16px;
+	height: 50px; 
 	background-color: white;
 	border-radius: 8px;
-	transform-origin: -200px 8px;
-
+	transform-origin:8px 12.500em ;
 	animation-name: burstIn;
-	animation-duration: .5s;
+	animation-duration: 0.5s;
 	animation-delay: calc(var(--ani-order) * 150ms + var(--burst));
 	animation-fill-mode: both;
 	animation-timing-function: ease-out;
 }
-.hero-container .burst li:nth-child(1) {
+.burst li:nth-child(1) {
+	transform: rotate(-60deg);
+}
+.burst li:nth-child(2) {
+	transform: rotate(-30deg);
+}
+ /* 
+.burst li:nth-child(3) {
+ transform: rotate(90deg);
+}
+*/
+.burst li:nth-child(4) {
 	transform: rotate(30deg);
 }
-.hero-container .burst li:nth-child(2) {
+.burst li:nth-child(5) {
 	transform: rotate(60deg);
-}
-.hero-container .burst li:nth-child(3) {
-	transform: rotate(90deg);
-}
-.hero-container .burst li:nth-child(4) {
-	transform: rotate(120deg);
-}
-.hero-container .burst li:nth-child(5) {
-	transform: rotate(150deg);
 }
 
 /* Burst Ani */
-
 @keyframes burstIn {
 	0% {
-		/*opacity: 0;*/
+		opacity: 0;
 		/*transform: scaleX(0);*/
 		/*transform-origin: -191px 0px;*/
-		width: 0;
+		/*width: 0;*/
 	}
 	100% {
-		/*opacity: 1;*/
+		opacity: 1;
 		/*transform: scaleX(1);*/
-		/*width: 70px;*/
+		/* 		width: 70px; */
 		/*transform-origin: -200px 8px;*/
 	}
 }
