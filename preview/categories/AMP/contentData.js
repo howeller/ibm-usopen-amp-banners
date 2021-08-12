@@ -5,20 +5,20 @@ var objData = {
 		title: "US Open AMP Banners",
 		folderList: [
 			{
-				folderName: "html",
+				folderName: "amp",
 				title: "AMP Story ADs",
 				bannerList: [
 					{
 						overwriteSizeDisplay: "1",
 						label: "IBM_USO_StoryAd_V1",
 						src: "IBM_USO_StoryAd_V1",
-						w: 600,
-						h: 1200,
+						w: 450,
+						h: 900,
 						type: "html5responsive",
 						approved: false,
 						dload: false,
 						backup: false
-					},
+					}/*,
 					{
 						overwriteSizeDisplay: "2",
 						label: "IBM_USO_StoryAd_V2",
@@ -29,7 +29,7 @@ var objData = {
 						approved: false,
 						dload: false,
 						backup: false
-					}
+					}*/
 				]
 			}
 		]
