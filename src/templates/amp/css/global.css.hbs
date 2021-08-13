@@ -28,7 +28,6 @@ body {
 	font-family: "IBMPlexSans";
 	grid-template-columns: 1fr;
   grid-template-rows: min-content auto 32px auto;
-	/*	grid-template-rows: min-content auto auto; */
 	gap: 2rem;
 	color: white;
 	max-width: 600px;
@@ -46,13 +45,13 @@ body {
 	overflow: visible;
 }
 .logo-container img {
-	/*object-fit: cover;*/
 	max-height: 72px; 
 	width: clamp(270px, 4vw, 180px);
 	height: auto;
 }
 
 /* Text Section */
+
 .text-container {
   position: relative;
 }
@@ -90,7 +89,6 @@ body {
 	font-style: normal;
 	animation-name: txtIn, txtOut;
 	animation-duration: 0.5s, 0.7s;
-	/*animation-delay: calc(attr(data-delay) * var(--stagger)), calc(attr(data-delay) * var(--stagger) + 2s);*/
 	animation-delay: calc(var(--ani-order) * var(--stagger1)), calc(var(--ani-order) * var(--stagger) + 4s);
 	animation-fill-mode: both;
 	animation-timing-function: ease-out, ease-in;
