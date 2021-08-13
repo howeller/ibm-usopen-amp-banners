@@ -16,7 +16,7 @@ var objData = {
 						h: 600,
 						type: "html5responsive",
 						approved: false,
-						dload: false,
+						dload: true,
 						backup: false
 					},
 					{
@@ -27,7 +27,7 @@ var objData = {
 						h: 600,
 						type: "html5responsive",
 						approved: false,
-						dload: false,
+						dload: true,
 						backup: false
 					}
 				]
