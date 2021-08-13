@@ -20,7 +20,7 @@ body {
 .bg img {
 	object-fit: cover;
 }
-
+{{#if phone}}
 .container {
 	display: grid;
 	font-family: "IBMPlexSans";
@@ -31,7 +31,18 @@ body {
 	max-width: 600px;
 	margin: auto;
 	height: 100vh;
-}
+}{{else}}
+.container {
+	display: grid;
+	font-family: "IBMPlexSans";
+	grid-template-columns: 1fr;
+	grid-template-rows: min-content auto auto;
+	gap: 2rem;
+	color: white;
+	max-width: 600px;
+	margin: auto;
+	height: 100vh;
+}{{/if}}
 .container > div {
 	padding: 0 clamp(40px, 4vw, 50vw);
 }
@@ -60,15 +71,12 @@ body {
 }
 .text-container .text.frame-1 {
   font-size: clamp(25px, 6vw, 58px);
-  /*font-size: clamp(16px, 4vh, 58px);*/
 }
 .text-container .text.frame-2 {
   font-size: clamp(25px, 6vw, 38px);
-  /*font-size: clamp(16px, 4vh, 38px);*/
 }
 .text-container .text.frame-3 {
   font-size: clamp(25px, 6vw, 58px);
-  /*font-size: clamp(16px, 4vh, 58px);*/
 }
 .text-container .text span {
   display: block;
@@ -79,9 +87,9 @@ body {
 /* Text Animations */
 
 :root{
-	--frame2: 4s;
-	--frame3: 8.5s;
-	--burst: 10.5s;
+	--frame2: 4.5s;
+	--frame3: 9.5s;
+	--burst: 11.5s;
 	--stagger: 150ms;
 	--stagger1: 1s;
 }
@@ -91,7 +99,7 @@ body {
 	animation-name: txtIn, txtOut;
 	animation-duration: 0.5s, 0.7s;
 	/*animation-delay: calc(attr(data-delay) * var(--stagger)), calc(attr(data-delay) * var(--stagger) + 2s);*/
-	animation-delay: calc(var(--ani-order) * var(--stagger1)), calc(var(--ani-order) * var(--stagger) + 3s);
+	animation-delay: calc(var(--ani-order) * var(--stagger1)), calc(var(--ani-order) * var(--stagger) + 4s);
 	animation-fill-mode: both;
 	animation-timing-function: ease-out, ease-in;
 }
@@ -100,7 +108,7 @@ body {
 	font-style: normal;
 	animation-name: txtIn, txtOut;
 	animation-duration: 0.5s, 0.7s;
-	animation-delay: calc(var(--ani-order) * var(--stagger) + var(--frame2)), calc(var(--ani-order) * var(--stagger) + var(--frame2) + 3s);
+	animation-delay: calc(var(--ani-order) * var(--stagger) + var(--frame2)), calc(var(--ani-order) * var(--stagger) + var(--frame2) + 4s);
 	animation-fill-mode: both;
 	animation-timing-function: ease-out, ease-in;
 }

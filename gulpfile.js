@@ -51,10 +51,6 @@ function buildAmp(crushImages=false){
 				adCss: function(){	return `${this.name}.css`;},
 				adHtml: function(){	return `${this.name}.html`;},
 				cssCheck : function(){	return util.fileCheck(`${dir.css}${this.name}.css.hbs`)}
-				// getImgSize : function(file, options){ return helper.getImgSize(this.imgPath, file, options)},
-				// getImgProp : function(file, prop){ return helper.getImgProp(this.imgPath, file, prop)},
-				// int: helper.int,
-				// times: helper.times
 			}
 		}
 

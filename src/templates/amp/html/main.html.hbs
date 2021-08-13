@@ -45,17 +45,6 @@
 		<div class="burst-container">
 			<div class="burst">
 				<ul>
-					<li style="--ani-order:1.5"></li>
-					<li style="--ani-order:1.2"></li>
-					<li style="--ani-order:1.1"></li>
-					<li style="--ani-order:1.2"></li>
-					<li style="--ani-order:1.5"></li>
-				</ul>
-			</div>
-		</div>
-  	<!-- <div class="burst-container">
-  		<div class="burst">
-				<ul>
 					<li style="--ani-order:1.5;"></li>
 					<li style="--ani-order:1.2;"></li>
 					<li style="--ani-order:1.1;"></li>
@@ -63,9 +52,9 @@
 					<li style="--ani-order:1.5;"></li>
 				</ul>
 			</div>
-		</div> -->
-		<div class="hero-container">
-			<amp-img class="phone" src="images/phone.png" width="449" height="600" layout="intrinsic"></amp-img>
+		</div>
+		<div class="hero-container">{{#if phone}}
+			<amp-img class="phone" src="images/phone.png" width="449" height="600" layout="intrinsic"></amp-img>{{/if}}
 		</div>
 	</div>
 	{{!> (adHtml)}}
