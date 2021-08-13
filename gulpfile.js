@@ -27,6 +27,8 @@ const dir = {
 	templates:'./src/templates/amp/'
 }
 
+const useCDN = true; 
+
 function buildAmp(crushImages=false){
 	const groupFolders = util.getFolders(dir.srcAmp);
 
@@ -50,7 +52,8 @@ function buildAmp(crushImages=false){
 			helpers : {
 				adCss: function(){	return `${this.name}.css`;},
 				adHtml: function(){	return `${this.name}.html`;},
-				cssCheck : function(){	return util.fileCheck(`${dir.css}${this.name}.css.hbs`)}
+				cssCheck : function(){	return util.fileCheck(`${dir.css}${this.name}.css.hbs`)},
+				getImgPath : function(){ return useCDN ? 'https://s0.2mdn.net/creatives/assets/4260222/' : 'images/'}
 			}
 		}
 

@@ -18,11 +18,26 @@
 </head>
 {{!--<!-- In order to see this ads as a standalone AMP page please add the amp-story-visible attribute to the body tag here. 
 	Please remember to remove this attribute before uploading your ad to an ad-server. -->--}}
-<body amp-story-visible>
-	<amp-img alt="{{bg.alt}}"class="hero"src="{{{bg.src}}}"width="600"height="1200"layout="fill"></amp-img>
+<body{{! amp-story-visible}}>
+	<amp-img alt="{{bg.alt}}"
+		class="hero"
+		srcset="{{getImgPath}}{{bg.src}} {{bg.w1}}w, {{getImgPath}}{{{bg.src2}}} {{bg.w2}}w, {{getImgPath}}{{{bg.src3}}} {{bg.w3}}w"
+		src="{{getImgPath}}{{bg.src}}"
+		width="1"
+		height="2"
+		layout="fill">
+	</amp-img>
 	<div class="container">
 		<div class="logo-container">
-			<amp-img alt="logo"class="logo"src="images/ibm-uso-logo.png" width="315" height="72" layout="intrinsic"></amp-img>
+			<amp-img
+				alt="IBM"
+				class="logo"
+				srcset="{{getImgPath}}logo_3x.png 630w, {{getImgPath}}logo_2x.png 315w, {{getImgPath}}logo_2x.png 158w" 
+				src="{{getImgPath}}logo_3x.png"
+				width="315"
+				height="72"
+				layout="intrinsic">
+			</amp-img>
 		</div>
 		<div class="text-container">
 			<p class="text frame-1">
@@ -53,9 +68,18 @@
 				</ul>
 			</div>
 		</div>
-		<div class="hero-container">{{#if phone}}
-			<amp-img class="phone" src="images/phone.png" width="449" height="600" layout="intrinsic"></amp-img>{{else}}
-			<amp-img class="ball" src="images/ball_3x.png" width="400" height="400" layout="intrinsic"></amp-img>{{/if}}
+		<div class="hero-container">
+			<amp-img alt="{{heroImg.alt}}"
+				class="{{heroImg.class}}"
+				srcset="{{getImgPath}}{{heroImg.src}} {{heroImg.w1}}w, {{getImgPath}}{{{heroImg.src2}}} {{heroImg.w2}}w, {{getImgPath}}{{{heroImg.src3}}} {{heroImg.w3}}w"
+				src="{{getImgPath}}{{heroImg.src}}"
+				width="{{heroImg.width}}"
+				height="{{heroImg.height}}"
+				layout="intrinsic">
+			</amp-img><!-- TEST {{!#getImgSize heroImg.src2}}w -->
+	{{!--#if phone}}
+			<amp-img class="phone" src="{{getImgPath}}phone.png" width="449" height="600" layout="intrinsic"></amp-img>{{else}}
+			<amp-img class="ball" src="{{getImgPath}}ball_3x.png" width="400" height="400" layout="intrinsic"></amp-img>{{/if--}}
 		</div>
 	</div>
 	{{!> (adHtml)}}
