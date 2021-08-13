@@ -25,7 +25,7 @@ var objData = {
 							// "Apple SE:262x466," +
 							"Samsung Galaxy 8:324x666," +
 							// "iPhoneXR:414x896," + 
-							"Apple iPad Pro:512x683," + 
+							"Apple iPad Pro:512x683"+
 							// "resize" + 
 							// "fullscreen" + 
 						"]"
@@ -47,7 +47,7 @@ var objData = {
 							// "Apple SE:262x466," +
 							"Samsung Galaxy 8:324x666," +
 							// "iPhoneXR:414x896," + 
-							"Apple iPad Pro:512x683," + 
+							"Apple iPad Pro:512x683"+
 							// "resize" + 
 							// "fullscreen" + 
 						"]"
