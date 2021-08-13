@@ -17,7 +17,18 @@ var objData = {
 						type: "html5responsive",
 						approved: false,
 						dload: true,
-						backup: false
+						backup: false,
+						sizesArray: "[" + 
+							"Mobile:300x600," +
+							"Apple iPhone 8 Plus:405x720," +
+							"Apple iPhone 11 Pro:338x731," +
+							// "Apple SE:262x466," +
+							"Samsung Galaxy 8:324x666," +
+							// "iPhoneXR:414x896," + 
+							"Apple iPad Pro:512x683," + 
+							// "resize" + 
+							// "fullscreen" + 
+						"]"
 					},
 					{
 						overwriteSizeDisplay: "2",
@@ -28,7 +39,18 @@ var objData = {
 						type: "html5responsive",
 						approved: false,
 						dload: true,
-						backup: false
+						backup: false,
+						sizesArray: "[" + 
+							"Mobile:300x600," +
+							"Apple iPhone 8 Plus:405x720," +
+							"Apple iPhone 11 Pro:338x731," +
+							// "Apple SE:262x466," +
+							"Samsung Galaxy 8:324x666," +
+							// "iPhoneXR:414x896," + 
+							"Apple iPad Pro:512x683," + 
+							// "resize" + 
+							// "fullscreen" + 
+						"]"
 					}
 				]
 			}
