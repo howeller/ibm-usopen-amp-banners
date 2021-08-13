@@ -27,7 +27,7 @@ const dir = {
 	templates:'./src/templates/amp/'
 }
 
-const useCDN = true; 
+const useCDN = false;
 
 function buildAmp(crushImages=false){
 	const groupFolders = util.getFolders(dir.srcAmp);
