@@ -20,7 +20,7 @@ var objData = {
 						backup: false,
 						sizesArray: "[" + 
 							"Mobile:300x600," +
-							"Apple iPhone 8 Plus:405x720," +
+							"Apple iPhone 8 Plus:365x648," +
 							"Apple iPhone 11 Pro:338x731," +
 							// "Apple SE:262x466," +
 							"Samsung Galaxy 8:324x666," +
@@ -42,7 +42,7 @@ var objData = {
 						backup: false,
 						sizesArray: "[" + 
 							"Mobile:300x600," +
-							"Apple iPhone 8 Plus:405x720," +
+							"Apple iPhone 8 Plus:365x648," +
 							"Apple iPhone 11 Pro:338x731," +
 							// "Apple SE:262x466," +
 							"Samsung Galaxy 8:324x666," +
