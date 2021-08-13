@@ -61,14 +61,23 @@
 @keyframes burstIn {
 	0% {
 		opacity: 0;
-		top: 106px;
-		transform-origin:6px 5.5em;
 	}
-	75%{
+	100% {
+		opacity: 1;
+	}
+}
+{{!--/* NON AMP VALID Burst Ani */
+@keyframes burstIn {
+	0% {
+		opacity: 0;
+		margin-top: 106px;
+		/*transform-origin:6px 5.5em;*/
+	}
+	80%{
 		opacity:0;
 	}
 	100% {
 		opacity: 1;
-		top:6px;
+		margin-top:6px;
 	}
-}
+}--}}

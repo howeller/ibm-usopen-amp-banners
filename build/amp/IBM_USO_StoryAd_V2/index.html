@@ -31,7 +31,6 @@
 		font-family: "IBMPlexSans";
 		grid-template-columns: 1fr;
 	  grid-template-rows: min-content auto 32px auto;
-		/*	grid-template-rows: min-content auto auto; */
 		gap: 2rem;
 		color: white;
 		max-width: 600px;
@@ -49,13 +48,13 @@
 		overflow: visible;
 	}
 	.logo-container img {
-		/*object-fit: cover;*/
 		max-height: 72px; 
 		width: clamp(270px, 4vw, 180px);
 		height: auto;
 	}
 	
 	/* Text Section */
+	
 	.text-container {
 	  position: relative;
 	}
@@ -93,7 +92,6 @@
 		font-style: normal;
 		animation-name: txtIn, txtOut;
 		animation-duration: 0.5s, 0.7s;
-		/*animation-delay: calc(attr(data-delay) * var(--stagger)), calc(attr(data-delay) * var(--stagger) + 2s);*/
 		animation-delay: calc(var(--ani-order) * var(--stagger1)), calc(var(--ani-order) * var(--stagger) + 4s);
 		animation-fill-mode: both;
 		animation-timing-function: ease-out, ease-in;
@@ -168,16 +166,16 @@
 	list-style: none;
 	margin: 0;
 	padding: 0;
-	width: 9px;/*16px;*/
-	height: 33px;/*50px;*/ /* 3.125em*/
+	width: 9px;/**/
+	height: 33px;/**/
 }
 .burst li {
 	display: block;
 	position: absolute;
 	top: 0;
 	right: 0;
-	width: 9px;/*16px;*/
-	height: 33px;/*50px;*/ 
+	width: 9px;/**/
+	height: 33px;/**/ 
 	background-color: white;
 	border-radius: 8px;
 	box-shadow: 3px 3px 10px rgba(0,0,0,0.5);
@@ -195,9 +193,6 @@
 .burst li:nth-child(2) {
 	transform: rotate(-30deg);
 }
-/*.burst li:nth-child(3) {
- transform: rotate(90deg);
-}*/
 .burst li:nth-child(4) {
 	transform: rotate(30deg);
 }
@@ -209,15 +204,9 @@
 @keyframes burstIn {
 	0% {
 		opacity: 0;
-		top: 106px;
-		transform-origin:6px 5.5em;
-	}
-	80%{
-		opacity:0;
 	}
 	100% {
 		opacity: 1;
-		top:6px;
 	}
 }
 
@@ -231,20 +220,20 @@
 		</div>
 		<div class="text-container">
 			<p class="text frame-1">
-				<span><i data-delay="1" style="--ani-order:1;">You see tennis.</i></span>
-				<span><i data-delay="2" style="--ani-order:2;">We see data.</i></span>
+				<span><i style="--ani-order:1;">You see tennis.</i></span>
+				<span><i style="--ani-order:2;">We see data.</i></span>
 			</p>
 			<p class="text frame-2">
-				<span><i data-delay="1" style="--ani-order:1;">IBM Power Rankings </i></span>
-				<span><i data-delay="2" style="--ani-order:2;">with Watson is </i></span>
-				<span><i data-delay="3" style="--ani-order:3;">analyzing every </i></span>
-				<span><i data-delay="4" style="--ani-order:4;">second of the </i></span>
-				<span><i data-delay="5" style="--ani-order:5;">US Open.</i></span>
+				<span><i style="--ani-order:1;">IBM Power Rankings </i></span>
+				<span><i style="--ani-order:2;">with Watson is </i></span>
+				<span><i style="--ani-order:3;">analyzing every </i></span>
+				<span><i style="--ani-order:4;">second of the </i></span>
+				<span><i style="--ani-order:5;">US Open.</i></span>
 			</p>
 			<p class="text frame-3">
-				<span><i data-delay="1" style="--ani-order:1;">Follow the </i></span>
-				<span><i data-delay="2" style="--ani-order:2;">action from </i></span>
-				<span><i data-delay="3" style="--ani-order:3;">court to couch.</i></span>
+				<span><i style="--ani-order:1;">Follow the </i></span>
+				<span><i style="--ani-order:2;">action from </i></span>
+				<span><i style="--ani-order:3;">court to couch.</i></span>
 			</p>
 		</div>
 		<div class="burst-container">
