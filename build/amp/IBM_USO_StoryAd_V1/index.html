@@ -85,6 +85,7 @@
 		--burst: 11.5s;
 		--stagger: 150ms;
 		--stagger1: 1s;
+		--blue: #0062ff;
 	}
 	.text-container .frame-1 span i {
 		display: block;
@@ -140,74 +141,93 @@
 	  justify-content: center;
 	}
 	/* phone */
-.hero-container .phone {
-	margin-top: auto;
-}
-.hero-container .phone img {
-	max-height: clamp(45vh, 4vw, 280px);
-}
-
-/* Burst Section */
-
-.burst-container {
-	position: relative;
-}
-.burst {
-	position: absolute;
-	display: block;
-	left: calc(50% - .5em);
-	font-size: 12px; /* main controller*/
-}
-.burst ul {
-	list-style: none;
-	margin: 0;
-	padding: 0;
-	width: 12px;/**/
-	height: 40px;/**/
-}
-.burst li {
-	display: block;
-	position: absolute;
-	top: 0;
-	right: 0;
-	width: 12px;/**/
-	height: 40px;/**/
-	background-color: white;
-	border-radius: 8px;
-	box-shadow: 3px 3px 10px rgba(0,0,0,0.5);
-	transform-origin:6px 12.500em ;
-	animation-name: burstIn;
-	animation-duration: 0.5s;
-	animation-delay: calc(var(--ani-order) * 250ms + var(--burst));
-	animation-fill-mode: both;
-	animation-timing-function: ease-out;
-}
-.burst li:nth-child(1) {
-	transform: rotate(-60deg);
-}
-.burst li:nth-child(2) {
-	transform: rotate(-30deg);
-}
-/*.burst li:nth-child(3) {
- transform: rotate(90deg);
-}*/
-.burst li:nth-child(4) {
-	transform: rotate(30deg);
-}
-.burst li:nth-child(5) {
-	transform: rotate(60deg);
-}
-
-/* Burst Ani */
-@keyframes burstIn {
-	0% {
-		opacity: 0;
+	.hero-container .phone {
+		margin-top: auto;
 	}
-	100% {
-		opacity: 1;
+	.hero-container .phone img {
+		max-height: clamp(45vh, 4vw, 280px);
 	}
-}
-
+	
+	/* Burst Section */
+	
+	.burst-container {
+		position: relative;
+	}
+	.burst {
+		position: absolute;
+		display: block;
+		left: calc(50% - .5em);
+		font-size: 12px; /* main controller*/
+	}
+	.burst ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		width: 12px;/**/
+		height: 40px;/**/
+	}
+	.burst li {
+		display: block;
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 12px;/**/
+		height: 40px;/**/
+		background-color: white;
+		border-radius: 8px;
+		box-shadow: 3px 3px 10px rgba(0,0,0,0.5);
+		transform-origin:6px 12.500em ;
+		animation-name: burstIn;
+		animation-duration: 0.5s;
+		animation-delay: calc(var(--ani-order) * 250ms + var(--burst));
+		animation-fill-mode: both;
+		animation-timing-function: ease-out;
+	}
+	.burst li:nth-child(1) {
+		transform: rotate(-60deg);
+	}
+	.burst li:nth-child(2) {
+		transform: rotate(-30deg);
+	}
+	/*.burst li:nth-child(3) {
+	 transform: rotate(90deg);
+	}*/
+	.burst li:nth-child(4) {
+		transform: rotate(30deg);
+	}
+	.burst li:nth-child(5) {
+		transform: rotate(60deg);
+	}
+	
+	/* Burst Ani */
+	@keyframes burstIn {
+		0% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
+	}
+	.cta-container {
+		bottom: 4vh;
+		display: flex;
+		justify-content: center;
+		position: absolute;
+		width: 100vw;
+	}
+	
+	.cta-container a {
+		background-color: var(--blue);
+		box-shadow: 2px 2px 10px rgba(0,0,0,0.7);
+		border: none; 
+		border-radius: 0.7em;
+		color: white; 
+		cursor: pointer;
+		font-family: "IBMPlexSans";
+	  font-size: clamp(15px, 4vw, 38px);
+		padding: 0.5em 2.2em;
+		text-decoration: none;
+	}
 	</style>
 </head>
 <body>
@@ -268,8 +288,11 @@
 				width="449"
 				height="600"
 				layout="intrinsic">
-			</amp-img><!-- TEST w -->
+			</amp-img><!-- w -->
 		</div>
+	</div>
+	<div class="cta-container">
+		<a class="cta" href="" target="_blank">Learn More</a>
 	</div>
 </body>
 </html>

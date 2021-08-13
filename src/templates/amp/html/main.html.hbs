@@ -13,7 +13,8 @@
 	<style amp-custom>
 	{{> fonts.css}}
 	{{> global.css}}
-	{{#if (cssCheck)}}{{> (adCss) }}{{/if}}
+	{{> (adCss) }}
+	{{> cta.css}}
 	</style>
 </head>
 {{!--<!-- In order to see this ads as a standalone AMP page please add the amp-story-visible attribute to the body tag here. 
@@ -76,12 +77,11 @@
 				width="{{heroImg.width}}"
 				height="{{heroImg.height}}"
 				layout="intrinsic">
-			</amp-img><!-- TEST {{!#getImgSize heroImg.src2}}w -->
-	{{!--#if phone}}
-			<amp-img class="phone" src="{{getImgPath}}phone.png" width="449" height="600" layout="intrinsic"></amp-img>{{else}}
-			<amp-img class="ball" src="{{getImgPath}}ball_3x.png" width="400" height="400" layout="intrinsic"></amp-img>{{/if--}}
+			</amp-img><!-- {{!log (getImgSize heroImg.src2)}}w -->
 		</div>
 	</div>
-	{{!> (adHtml)}}
+	<div class="cta-container">
+		<a class="cta" href="" target="_blank">Learn More</a>
+	</div>
 </body>
 </html>
