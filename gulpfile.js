@@ -12,7 +12,8 @@ const del = require('del'),
 	zip = require('gulp-zip');
 
 // Custom modules & config
-const util = require('./lib/fsUtils');
+const util = require('./lib/fsUtils'),
+	helper = require('./lib/hbHelpers');
 
 // Directory structure
 const dir = {
@@ -44,7 +45,7 @@ function buildAmp(crushImages=false){
 
 		_data['name'] = _name;
 		_data['global'] = _config.global;
-		// _data['imgPath'] = _src+'/images/';
+		_data['imgPath'] = _src+'/images/';
 
 		let option = {
 			ignorePartials:false,
@@ -53,6 +54,7 @@ function buildAmp(crushImages=false){
 				adCss: function(){	return `${this.name}.css`;},
 				adHtml: function(){	return `${this.name}.html`;},
 				cssCheck : function(){	return util.fileCheck(`${dir.css}${this.name}.css.hbs`)},
+				getImgSize : function(file, options){ return helper.getImgSize(this.imgPath, file, options)},
 				getImgPath : function(){ return useCDN ? 'https://s0.2mdn.net/creatives/assets/4260222/' : 'images/'}
 			}
 		}
