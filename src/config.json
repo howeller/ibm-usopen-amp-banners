@@ -10,7 +10,8 @@
 		},
 		"IBM_USO_StoryAd_V2": {
 			"bg":{
-				"src": "images/bgB2_3x.jpg",
+				"src": "images/bgB1_3x.jpg",
+				"__src": "images/bgB2_3x.jpg",
 				"alt": ""
 			}
 		}

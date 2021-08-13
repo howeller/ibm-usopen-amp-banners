@@ -30,7 +30,8 @@
 		display: grid;
 		font-family: "IBMPlexSans";
 		grid-template-columns: 1fr;
-		grid-template-rows: min-content auto auto;
+	  grid-template-rows: min-content auto 32px auto;
+		/*	grid-template-rows: min-content auto auto; */
 		gap: 2rem;
 		color: white;
 		max-width: 600px;
@@ -143,13 +144,13 @@
 	}
 	/* BALL */
 
-/*.hero-container .ball {
-	 margin-top: auto; 
-}*/
+.hero-container .ball {
+	margin-bottom: auto;
+	margin-right:-5vw;
+}
 .hero-container .ball img {
-	/*max-height: clamp(45vh, 4vw, 100px);*/
-	max-height: 100px; /* clamp this */
-	max-width: 100px;
+	max-height: clamp(40vw, 4vw, 150px);
+	max-width: clamp(40vw, 4vw, 150px);
 } 
 
 /* Burst Section */
@@ -186,6 +187,7 @@
 	animation-delay: calc(var(--ani-order) * 350ms + var(--burst));
 	animation-fill-mode: both;
 	animation-timing-function: ease-in;
+	backface-visibility: hidden;
 }
 .burst li:nth-child(1) {
 	transform: rotate(-60deg);
@@ -207,23 +209,22 @@
 @keyframes burstIn {
 	0% {
 		opacity: 0;
-		/*transform: scale(0);*/
-		/*transform-origin: -191px 0px;*/
+		top: 106px;
+		transform-origin:6px 5.5em;
 	}
-	/*50% {
-		transform: scale(0);
-	}*/
+	80%{
+		opacity:0;
+	}
 	100% {
 		opacity: 1;
-		/*transform: scaleY(1);*/
-		/*transform-origin: -200px 8px;*/
+		top:6px;
 	}
 }
 
 	</style>
 </head>
 <body amp-story-visible>
-	<amp-img alt=""class="hero"src="images/bgB2_3x.jpg"width="600"height="1200"layout="fill"></amp-img>
+	<amp-img alt=""class="hero"src="images/bgB1_3x.jpg"width="600"height="1200"layout="fill"></amp-img>
 	<div class="container">
 		<div class="logo-container">
 			<amp-img alt="logo"class="logo"src="images/ibm-uso-logo.png" width="315" height="72" layout="intrinsic"></amp-img>
@@ -258,6 +259,7 @@
 			</div>
 		</div>
 		<div class="hero-container">
+			<amp-img class="ball" src="images/ball_3x.png" width="400" height="400" layout="intrinsic"></amp-img>
 		</div>
 	</div>
 </body>
