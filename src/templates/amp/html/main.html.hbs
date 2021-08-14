@@ -22,7 +22,7 @@
 <body{{! amp-story-visible}}>
 	<amp-img alt="{{bg.alt}}"
 		class="hero"
-		srcset="{{getImgPath}}{{bg.src}} {{bg.w1}}w, {{getImgPath}}{{{bg.src2}}} {{bg.w2}}w, {{getImgPath}}{{{bg.src3}}} {{bg.w3}}w"
+		srcset="{{getImgPath}}{{bg.src}} {{getImgWidth bg.src}}w, {{getImgPath}}{{{bg.src2}}} {{getImgWidth bg.src2}}w, {{getImgPath}}{{{bg.src3}}} {{getImgWidth bg.src3}}w"
 		src="{{getImgPath}}{{bg.src}}"
 		width="1"
 		height="2"
@@ -72,12 +72,12 @@
 		<div class="hero-container">
 			<amp-img alt="{{heroImg.alt}}"
 				class="{{heroImg.class}}"
-				srcset="{{getImgPath}}{{heroImg.src}} {{heroImg.w1}}w, {{getImgPath}}{{{heroImg.src2}}} {{heroImg.w2}}w, {{getImgPath}}{{{heroImg.src3}}} {{heroImg.w3}}w"
+				srcset="{{getImgPath}}{{heroImg.src}} {{getImgWidth heroImg.src}}w, {{getImgPath}}{{{heroImg.src2}}} {{getImgWidth heroImg.src2}}w, {{getImgPath}}{{{heroImg.src3}}} {{getImgWidth heroImg.src3}}w"
 				src="{{getImgPath}}{{heroImg.src}}"
 				width="{{heroImg.width}}"
 				height="{{heroImg.height}}"
 				layout="intrinsic">
-			</amp-img><!-- {{!log (getImgSize heroImg.src2)}}w -->
+			</amp-img><!-- {{getImgWidth heroImg.src2}}w -->
 		</div>
 	</div>
 	<div class="cta-container">
