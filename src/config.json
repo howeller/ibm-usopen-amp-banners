@@ -4,30 +4,30 @@
 		"IBM_USO_StoryAd_V1": {
 			"phone":true,
 			"bg":{
-				"src": "bgA_3x.jpg", "w1": 1200,
-				"src2": "bgA_2x.jpg", "w2": 600,
-				"src3": "bgA_1x.jpg", "w3": 300
+				"src": "bgA_3x.jpg",
+				"src2": "bgA_2x.jpg",
+				"src3": "bgA_1x.jpg"
 			},
 			"heroImg":{
 				"class": "phone",
-				"src": "phone_3x.png", "w1":898,
-				"src2": "phone_2x.png", "w2":449,
-				"src3": "phone_1x.png", "w3": 225,
+				"src": "phone_3x.png",
+				"src2": "phone_2x.png",
+				"src3": "phone_1x.png",
 				"width": 449,
 				"height": 600
 			}
 		},
 		"IBM_USO_StoryAd_V2": {
 			"bg":{
-				"src": "bgB_3x.jpg", "w1": 1200,
-				"src2": "bgB_2x.jpg", "w2": 600,
-				"src3": "bgB_1x.jpg", "w3": 300
+				"src": "bgB_3x.jpg",
+				"src2": "bgB_2x.jpg",
+				"src3": "bgB_1x.jpg"
 			},
 			"heroImg":{
 				"class": "ball",
-				"src": "ball_3x.png", "w1":505,
-				"src2": "ball_2x.png", "w2":303,
-				"src3": "ball_1x.png", "w3":152,
+				"src": "ball_3x.png",
+				"src2": "ball_2x.png",
+				"src3": "ball_1x.png",
 				"width": 505,
 				"height": 516
 			}
