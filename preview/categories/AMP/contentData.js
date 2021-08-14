@@ -19,12 +19,13 @@ var objData = {
 						dload: true,
 						backup: false,
 						sizesArray: "[" + 
-							"Mobile:300x600," +
-							"Apple iPhone 8 Plus:365x648," +
+							// "Mobile:300x600," +
 							"Apple iPhone 11 Pro:338x731," +
-							// "Apple SE:262x466," +
+							"Apple iPhone 8 Plus:365x648," +
+							// "Apple iPhone SE:262x466," +
+							// "Apple iPhone XR:414x896," + 
+							"Google Pixel:335x595," +
 							"Samsung Galaxy 8:324x666," +
-							// "iPhoneXR:414x896," + 
 							"Apple iPad Pro:512x683"+
 							// "resize" + 
 							// "fullscreen" + 
@@ -41,12 +42,13 @@ var objData = {
 						dload: true,
 						backup: false,
 						sizesArray: "[" + 
-							"Mobile:300x600," +
-							"Apple iPhone 8 Plus:365x648," +
+							// "Mobile:300x600," +
 							"Apple iPhone 11 Pro:338x731," +
-							// "Apple SE:262x466," +
+							"Apple iPhone 8 Plus:365x648," +
+							// "Apple iPhone SE:262x466," +
+							// "Apple iPhone XR:414x896," + 
+							"Google Pixel:335x595," +
 							"Samsung Galaxy 8:324x666," +
-							// "iPhoneXR:414x896," + 
 							"Apple iPad Pro:512x683"+
 							// "resize" + 
 							// "fullscreen" + 
