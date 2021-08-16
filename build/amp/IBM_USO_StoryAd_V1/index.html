@@ -29,7 +29,7 @@
 		display: grid;
 		font-family: "IBMPlexSans";
 		grid-template-columns: 1fr;
-		grid-template-rows: min-content auto 75px min-content;
+		grid-template-rows: min-content auto clamp(24px, 9vh,75px) min-content;
 		gap: 2rem;
 		color: white;
 		max-width: 600px;
@@ -171,12 +171,12 @@
 		position: absolute;
 		top: 0;
 		right: 0;
-		width: 12px;/**/
-		height: 40px;/**/
+		width: clamp(6px, 2vh, 12px);/*12px;*/
+		height: clamp(25px, 6vh, 42px);/*40px;*/
 		background-color: white;
 		border-radius: 8px;
 		box-shadow: 3px 3px 10px rgba(0,0,0,0.5);
-		transform-origin:6px 12.500em ;
+		transform-origin: 6px clamp(13.5em, 25vh, 21em);
 		animation-name: burstIn;
 		animation-duration: 0.5s;
 		animation-delay: calc(var(--ani-order) * 250ms + var(--burst));
