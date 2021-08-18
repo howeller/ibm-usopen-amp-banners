@@ -187,8 +187,8 @@ gulp.task('build', () => { return buildAmp(false)});
 gulp.task('build:img', () => { return buildAmp(true)});
 gulp.task('clean', () => { return del([dir.distAmp+'**/*']); });
 gulp.task('fonts', moveFonts);
-// Watching
 gulp.task('watch', () => { return gulp.watch([dir.srcAmp+'**/**/*', dir.templates+'**/*', dir.config], gulp.series('build'))});
+gulp.task('default', gulp.series('build'));
 
 // Phone Standard Banners
 gulp.task('move', movePhoneAssets);
@@ -204,6 +204,5 @@ gulp.task('chad3',		() => { return moveChadAssets(v3, false)});
 gulp.task('chad3:img',() => { return moveChadAssets(v3, true)});
 gulp.task('chad:clean',	() => { return del([dir.chadDist+'**/*']); });
 gulp.task('chad:all', gulp.series('chad:clean', 'chad1:img', 'chad2:img', 'chad3:img'));
+gulp.task('chad:watch', () => { return gulp.watch(dir.chadSrc+'**/**/*', gulp.series('chad1'))});
 
-// Build tasks in series
-gulp.task('default', gulp.series('build'));
