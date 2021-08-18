@@ -25,10 +25,15 @@ const dir = {
 	fonts: './src/fonts/',
 	srcFla:'./src/stdBanners/',
 	srcAmp:'./src/ampAds/',
-	templates:'./src/templates/amp/'
+	templates:'./src/templates/amp/',
+	chadSrc: 'ASSETS/Animate/',
+	chadDist: './build/html/'
 }
 
-const useCDN = false;
+const useCDN = false,
+	v1 = 'IBM_USO_CloudAI',
+	v2 = 'IBM_USO_DigExperience',
+	v3 = 'IBM_USO_PowerRankings';
 
 function buildAmp(crushImages=false){
 	const groupFolders = util.getFolders(dir.srcAmp);
@@ -96,8 +101,8 @@ function moveFonts(){
 	return lastStream;
 }
 
-// Rename Animate HTML files and copy to dist
-function moveAssets(){
+// Rename Phone Animate HTML files and copy to dist
+function movePhoneAssets(){
 
 	let groupFolders = util.getFolders(dir.srcFla);
 
@@ -125,7 +130,7 @@ function moveAssets(){
 	return lastStream;
 };
 
-// Compress PNGs
+// Compress Phone PNGs
 function pngs(){
 
 	let groupFolders = util.getFolders(dir.dist);
@@ -141,6 +146,41 @@ function pngs(){
 	let lastStream = task[task.length-1];
 	return lastStream;
 }
+
+// Move Chad's Animate files to build and compress PNGs
+function moveChadAssets(concept, crushImages=false){
+
+	let groupFolders = util.getFolders(dir.chadSrc+concept);
+
+	let task = groupFolders.map(function(folder) {
+		let _src = path.join(dir.chadSrc+concept, folder),
+				_dist = path.join(dir.chadDist, folder);
+	
+		let _html = gulp.src(`${_src}/*.html`)
+			.pipe(rename('index.html'))//Rename html for preview site
+			.pipe(gulp.dest(_dist));
+			
+		// Copy js if present
+		let _js = gulp.src(`${_src}/*.js`).pipe(gulp.dest(_dist));
+
+		// console.log(`CRUSH EM? `,crushImages);
+		if(crushImages){
+			let pngs = gulp.src( _src+'/images/*.png')
+				.pipe(buffer())// DEV: We must buffer our stream into a Buffer for imagemin
+				.pipe(imagemin([pngquant({quality: [0.2, 0.5]})]));
+
+			let jpgs = gulp.src(_src+'/images/*.jpg');
+
+			let _images = merge(pngs, jpgs).pipe(gulp.dest(_dist+'/images/'));// Copy all "images" WITH compression
+
+		return merge(_html, _js, _images);
+		}
+		return merge(_html, _js);
+	});
+	let lastStream = task[task.length-1];
+	return lastStream;
+};
+
 // Gulp Tasks
 // AMP Handlebars Build
 gulp.task('build', () => { return buildAmp(false)});
@@ -150,12 +190,20 @@ gulp.task('fonts', moveFonts);
 // Watching
 gulp.task('watch', () => { return gulp.watch([dir.srcAmp+'**/**/*', dir.templates+'**/*', dir.config], gulp.series('build'))});
 
-// Standard Banners
-gulp.task('move', moveAssets);
+// Phone Standard Banners
+gulp.task('move', movePhoneAssets);
 gulp.task('pngs', pngs);
 gulp.task('clean:phone', () => { return del([dir.dist+'**/*']); });
 
+// Chad Standard Banners
+gulp.task('chad1', () => { return moveChadAssets(v1, false)});
+gulp.task('chad1:img', () => { return moveChadAssets(v1, true)});
+gulp.task('chad2', () => { return moveChadAssets(v2, false)});
+gulp.task('chad2:img', () => { return moveChadAssets(v2, true)});
+gulp.task('chad3', () => { return moveChadAssets(v3, false)});
+gulp.task('chad3:img', () => { return moveChadAssets(v3, true)});
+gulp.task('clean:chad', () => { return del([dir.chadDist+'**/*']); });
+gulp.task('chad:all', gulp.series('clean:chad', 'chad1:img', 'chad2:img', 'chad3:img'));
+
 // Build tasks in series
-// gulp.task('build', gulp.series(moveAssets, pngs));
-// gulp.task('build:all', gulp.series('backups', 'build', 'zip'));
-gulp.task('default', gulp.series('b'));
+gulp.task('default', gulp.series('build'));
