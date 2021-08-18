@@ -196,14 +196,14 @@ gulp.task('pngs', pngs);
 gulp.task('clean:phone', () => { return del([dir.dist+'**/*']); });
 
 // Chad Standard Banners
-gulp.task('chad1', () => { return moveChadAssets(v1, false)});
-gulp.task('chad1:img', () => { return moveChadAssets(v1, true)});
-gulp.task('chad2', () => { return moveChadAssets(v2, false)});
-gulp.task('chad2:img', () => { return moveChadAssets(v2, true)});
-gulp.task('chad3', () => { return moveChadAssets(v3, false)});
-gulp.task('chad3:img', () => { return moveChadAssets(v3, true)});
-gulp.task('clean:chad', () => { return del([dir.chadDist+'**/*']); });
-gulp.task('chad:all', gulp.series('clean:chad', 'chad1:img', 'chad2:img', 'chad3:img'));
+gulp.task('chad1',		() => { return moveChadAssets(v1, false)});
+gulp.task('chad1:img',() => { return moveChadAssets(v1, true)});
+gulp.task('chad2',		() => { return moveChadAssets(v2, false)});
+gulp.task('chad2:img',() => { return moveChadAssets(v2, true)});
+gulp.task('chad3',		() => { return moveChadAssets(v3, false)});
+gulp.task('chad3:img',() => { return moveChadAssets(v3, true)});
+gulp.task('chad:clean',	() => { return del([dir.chadDist+'**/*']); });
+gulp.task('chad:all', gulp.series('chad:clean', 'chad1:img', 'chad2:img', 'chad3:img'));
 
 // Build tasks in series
 gulp.task('default', gulp.series('build'));
