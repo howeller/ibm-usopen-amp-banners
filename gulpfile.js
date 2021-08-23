@@ -61,7 +61,6 @@ function buildAmp(crushImages=false){
 				cssCheck : function(){	return util.fileCheck(`${dir.css}${this.name}.css.hbs`)},
 				getImgWidth : function(file){ return helper.getImgWidth(this.imgPath, file)},
 				getImgSize : function(file, prop){ return helper.getImgSize(this.imgPath, file, prop)},
-				// getImgProps : function(file, options){ return helper.getImgProps(this.imgPath, file, options)},
 				getImgPath : function(){ return useCDN ? 'https://s0.2mdn.net/creatives/assets/4260222/' : 'images/'}
 			}
 		}
