@@ -143,17 +143,17 @@ function pngs(){
 }
 // Gulp Tasks
 // AMP Handlebars Build
-gulp.task('b', () => { return buildAmp(false)});
-gulp.task('bi', () => { return buildAmp(true)});
+gulp.task('build', () => { return buildAmp(false)});
+gulp.task('build:img', () => { return buildAmp(true)});
 gulp.task('clean', () => { return del([dir.distAmp+'**/*']); });
-gulp.task('f', moveFonts);
+gulp.task('fonts', moveFonts);
 // Watching
-gulp.task('watch', () => { return gulp.watch([dir.srcAmp+'**/**/*', dir.templates+'**/*', dir.config], gulp.series('b'))});
+gulp.task('watch', () => { return gulp.watch([dir.srcAmp+'**/**/*', dir.templates+'**/*', dir.config], gulp.series('build'))});
 
 // Standard Banners
 gulp.task('move', moveAssets);
 gulp.task('pngs', pngs);
-gulp.task('clean2', () => { return del([dir.dist+'**/*']); });
+gulp.task('clean:phone', () => { return del([dir.dist+'**/*']); });
 
 // Build tasks in series
 // gulp.task('build', gulp.series(moveAssets, pngs));
